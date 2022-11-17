@@ -1,0 +1,1441 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo 2 Epidemiología Genética | Human Whole Exome Analysis</title>
+  <meta name="description" content="Apuntes del curso Human Whole Exome Analysis" />
+  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo 2 Epidemiología Genética | Human Whole Exome Analysis" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Apuntes del curso Human Whole Exome Analysis" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo 2 Epidemiología Genética | Human Whole Exome Analysis" />
+  
+  <meta name="twitter:description" content="Apuntes del curso Human Whole Exome Analysis" />
+  
+
+<meta name="author" content="Hugo Naya" />
+<meta name="author" content="Lucía Spangenberg" />
+
+
+<meta name="date" content="2022-11-17" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="genética-de-poblaciones.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Genética II</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Notas y “tutorial” para genética de poblaciones humana y algo de epidemiología genética</a></li>
+<li class="part"><span><b>Genética de Poblaciones</b></span></li>
+<li class="chapter" data-level="1" data-path="genética-de-poblaciones.html"><a href="genética-de-poblaciones.html"><i class="fa fa-check"></i><b>1</b> Genética de Poblaciones</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="genética-de-poblaciones.html"><a href="genética-de-poblaciones.html#lectura-de-un-archivo-vcf-con-genotipos-de-diversos-individuos"><i class="fa fa-check"></i><b>1.1</b> Lectura de un archivo VCF con genotipos de diversos individuos</a></li>
+<li class="chapter" data-level="1.2" data-path="genética-de-poblaciones.html"><a href="genética-de-poblaciones.html#el-equilibrio-de-hardy-weinberg-breve-introducción-teórica"><i class="fa fa-check"></i><b>1.2</b> El equilibrio de Hardy-Weinberg (breve introducción teórica)</a>
+<ul>
+<li class="chapter" data-level="" data-path="genética-de-poblaciones.html"><a href="genética-de-poblaciones.html#supuestos-que-asumimos-se-cumplen-para-h-w"><i class="fa fa-check"></i>Supuestos que asumimos se cumplen para H-W</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="genética-de-poblaciones.html"><a href="genética-de-poblaciones.html#equilibrio-de-hardy-weinberg-práctico"><i class="fa fa-check"></i><b>1.3</b> Equilibrio de Hardy-Weinberg (PRÁCTICO)</a></li>
+<li class="chapter" data-level="1.4" data-path="genética-de-poblaciones.html"><a href="genética-de-poblaciones.html#pasaje-de-los-genotipos-a-forma-numérica"><i class="fa fa-check"></i><b>1.4</b> Pasaje de los genotipos a forma numérica</a></li>
+<li class="chapter" data-level="1.5" data-path="genética-de-poblaciones.html"><a href="genética-de-poblaciones.html#muestras-y-poblaciones-en-nuestros-datos"><i class="fa fa-check"></i><b>1.5</b> Muestras y poblaciones en nuestros datos</a></li>
+<li class="chapter" data-level="1.6" data-path="genética-de-poblaciones.html"><a href="genética-de-poblaciones.html#análisis-de-componentes-principales"><i class="fa fa-check"></i><b>1.6</b> Análisis de Componentes Principales</a>
+<ul>
+<li class="chapter" data-level="1.6.1" data-path="genética-de-poblaciones.html"><a href="genética-de-poblaciones.html#pca-sin-na-y-con-reducido-número-de-marcadores"><i class="fa fa-check"></i><b>1.6.1</b> PCA sin NA y con reducido número de marcadores</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="genética-de-poblaciones.html"><a href="genética-de-poblaciones.html#paquetes-específicos-para-genética-de-poblaciones-adegenet-y-hierfstat"><i class="fa fa-check"></i><b>1.7</b> Paquetes específicos para genética de poblaciones (adegenet y hierfstat)</a></li>
+<li class="chapter" data-level="1.8" data-path="genética-de-poblaciones.html"><a href="genética-de-poblaciones.html#el-coeficiente-de-endocría-y-estadísticos-f-introducción-teórica"><i class="fa fa-check"></i><b>1.8</b> El Coeficiente de endocría y estadísticos <em>F</em> (introducción teórica)</a>
+<ul>
+<li class="chapter" data-level="1.8.1" data-path="genética-de-poblaciones.html"><a href="genética-de-poblaciones.html#estadísticos-f-práctico"><i class="fa fa-check"></i><b>1.8.1</b> Estadísticos <em>F</em> (práctico)</a></li>
+</ul></li>
+<li class="chapter" data-level="1.9" data-path="genética-de-poblaciones.html"><a href="genética-de-poblaciones.html#anális-de-pca-usando-paquetes-de-genética-de-poblaciones"><i class="fa fa-check"></i><b>1.9</b> Anális de PCA usando paquetes de genética de poblaciones</a></li>
+<li class="chapter" data-level="1.10" data-path="genética-de-poblaciones.html"><a href="genética-de-poblaciones.html#otra-forma-de-hacer-pca"><i class="fa fa-check"></i><b>1.10</b> OTRA FORMA DE HACER PCA</a>
+<ul>
+<li class="chapter" data-level="1.10.1" data-path="genética-de-poblaciones.html"><a href="genética-de-poblaciones.html#imputación"><i class="fa fa-check"></i><b>1.10.1</b> IMPUTACIÓN</a></li>
+</ul></li>
+<li class="chapter" data-level="1.11" data-path="genética-de-poblaciones.html"><a href="genética-de-poblaciones.html#ensembl-y-biomart"><i class="fa fa-check"></i><b>1.11</b> ENSEMBL y biomaRt</a></li>
+<li class="chapter" data-level="1.12" data-path="genética-de-poblaciones.html"><a href="genética-de-poblaciones.html#h-w-la-frecuencia-de-heterocigotas-en-función-de-la-frecuencia-alélica-intro-teórica"><i class="fa fa-check"></i><b>1.12</b> H-W: la frecuencia de heterocigotas en función de la frecuencia alélica (intro teórica)</a></li>
+<li class="chapter" data-level="1.13" data-path="genética-de-poblaciones.html"><a href="genética-de-poblaciones.html#heterocigosidad"><i class="fa fa-check"></i><b>1.13</b> Heterocigosidad</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="epidemio.html"><a href="epidemio.html"><i class="fa fa-check"></i><b>2</b> Epidemiología Genética</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="epidemio.html"><a href="epidemio.html#la-estimación-de-frecuencias-y-el-equilibrio-o-no"><i class="fa fa-check"></i><b>2.1</b> La estimación de frecuencias y el equilibrio (o no)</a></li>
+<li class="chapter" data-level="2.2" data-path="epidemio.html"><a href="epidemio.html#el-sistema-abo-introducción-teórica"><i class="fa fa-check"></i><b>2.2</b> El sistema ABO (introducción teórica)</a></li>
+<li class="chapter" data-level="2.3" data-path="epidemio.html"><a href="epidemio.html#la-estimación-de-frecuencias-en-el-locus-abo"><i class="fa fa-check"></i><b>2.3</b> La estimación de frecuencias en el locus ABO</a></li>
+<li class="chapter" data-level="2.4" data-path="epidemio.html"><a href="epidemio.html#clinvar"><i class="fa fa-check"></i><b>2.4</b> ClinVar</a></li>
+<li class="chapter" data-level="2.5" data-path="epidemio.html"><a href="epidemio.html#estudios-de-asociación-de-genoma-completo-gwas"><i class="fa fa-check"></i><b>2.5</b> Estudios de Asociación de Genoma Completo (GWAS)</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Human Whole Exome Analysis</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="epidemio" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">Capítulo 2</span> Epidemiología Genética<a href="epidemio.html#epidemio" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>En el capítulo anterior vimos algunos conceptos básicos de genética de poblaciones aplicados a poblaciones humanas. En el presente capítulo vamos a intentar comenzar a aproximarnos a algunos (pocos), conceptos de epidemiología genética. De nuevo, el capítulo no tiene ninguna pretensión de ser exhaustivo y el orden de los conceptos manejados es totalmente arbitrario.</p>
+<div id="la-estimación-de-frecuencias-y-el-equilibrio-o-no" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> La estimación de frecuencias y el equilibrio (o no)<a href="epidemio.html#la-estimación-de-frecuencias-y-el-equilibrio-o-no" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>En una población con un gran número de individuos, tendiendo a
+infinito, si la población se encuentra en equilibrio de Hardy-Weinberg
+el número de individuos de los distintos genotipos coincidirá
+estrechamente con las esperanzas de los mismos a partir las frecuencias
+de los alelos. Es decir, la variación estocástica en cada uno de los
+apareamientos (o en la unión de los gametos) tiende a cancelarse cuando
+consideramos el gran número de individuos en la población. Sin embargo,
+aún en esas grandes poblaciones no solemos tener acceso a la información
+de todos los individuos y sí, solamente, a la información de una
+<strong>muestra aleatoria</strong> de la misma. El concepto de muestra aleatoria es
+fundamental ya que será el que nos permitirá extender nuestras
+conclusiones de la muestra hacia la población, que en última instancia
+suele ser lo que nos interesa. Al trabajar con una muestra aleatoria
+relativamente reducida de la población, los números ahora serán mucho
+menores y por lo tanto los efectos del azar se verán incrementados.<br />
+Supongamos, para ver el impacto del tamaño de la muestra, que tenemos
+interés en estimar las frecuencias de los dos alelos en un locus
+autosomal de una especie diploide en una población determinada. Como se
+trata de una especie salvaje, difícil de capturar para muestrear, nos
+contentamos con los 5 individuos que pudimos genotipar para este locus;
+sin duda es mucho mejor que no tener nada. Como se trata de una especie
+diploide, si tenemos <span class="math inline">\(n\)</span> individuos vamos a tener <span class="math inline">\(2n\)</span> alelos
+genotipados, es decir, en nuestro caso un total de 10 alelos
+genotipados. Supongamos ahora que de esos 10 alelos genotipados, 3
+fueron del alelo <span class="math inline">\(A_1\)</span> y 7 del alelo <span class="math inline">\(A_2\)</span>. Es decir, la proporción de
+<span class="math inline">\(A_1\)</span> es igual a <span class="math inline">\(p=3/10=0,3\)</span>, mientras que la del alelo <span class="math inline">\(A_2\)</span> es de
+<span class="math inline">\(q=7/10=0,7\)</span> (hubiésemos llegado también a este resultado como <span class="math inline">\(q=1-p\)</span>).
+Parece razonable usar este valor de <span class="math inline">\(p\)</span> como un <strong>estimador</strong> del
+“verdadero valor”<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a> del parámetro en la población, en este caso la
+frecuencia del alelo <span class="math inline">\(A_1\)</span>, tanto que coincide con el estimador por
+máxima verosimilitud (es decir, escogemos como valor estimado aquel que tiene mayor probabilidad de ocurrir de acuerdo a lo que hemos observado).</p>
+<p>Ahora, ¿que certeza tenemos que este valor que estimamos esté cerca del
+“verdadero valor”? En principio, como solo tenemos 10 alelos
+genotipados, nuestras estimaciones irán de 10% en 10% (los saltos en la
+cuenta de alelos son de a 1, pero en 10 total, así que tenemos
+<span class="math inline">\(\frac{1}{10}=0,1=10\%\)</span>). O sea, la precisión de nuestra estimación es
+realmente baja.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:HWmuestrapeque2"></span>
+<img src="figuras/HW_muestrapeque2.png" alt="Probabilidad de observar un conteo de alelos determinado en una muestra de 5 individuos (a) y en una muestra de 50 individuos (b), dado que la frecuencia del mismo en la población es de 0,5." width="571" />
+<p class="caption">
+Figura 2.1: Probabilidad de observar un conteo de alelos determinado en una muestra de 5 individuos (a) y en una muestra de 50 individuos (b), dado que la frecuencia del mismo en la población es de 0,5.
+</p>
+</div>
+<p>Otra forma de ver este problema es pensar en cuál sería la probabilidad
+de observar este conteo de alelos <span class="math inline">\(A_1\)</span>, por ejemplo, dado que conocemos
+el verdadero valor del parámetro. Si suponemos que los individuos
+representan un muestreo al azar de los gametos en la población y que los
+individuos de la muestra fueron seleccionados al azar, entonces la
+probabilidad de observar un conteo <span class="math inline">\(x\)</span> en particular, dado el número
+total de alelos genotipados <span class="math inline">\(n\)</span>, se puede describir por la distribución
+binomial (en nuestro caso de dos alelos):
+<span class="math display" id="eq:binomi">\[\begin{equation}
+f(x)={n\choose x} p^x (1-p)^{n-x}
+\tag{2.1}
+\end{equation}\]</span></p>
+<p>con las combinaciones
+de <span class="math inline">\(n\)</span> elementos tomados de a <span class="math inline">\(x\)</span> elementos iguales a:</p>
+<p><span class="math display">\[\begin{equation}
+{n\choose x}=\frac{n!}{x!(n-x)!}
+\end{equation}\]</span></p>
+<p>Por ejemplo, si la frecuencia “real” en la población entera para el alelo <span class="math inline">\(A_1\)</span> es de
+<span class="math inline">\(p=0,5\)</span>, ¿cuál sería la probabilidad de observar este conteo de 3
+alelos en los 10 que genotipamos? De acuerdo a la ecuación
+<a href="epidemio.html#eq:binomi">(2.1)</a>, la
+probabilidad de obtener 3 conteos en una muestra de 10, con una
+probabilidad <span class="math inline">\(p=0,5\)</span> en la población es de:
+<span class="math display">\[\begin{equation}
+f(3)={10\choose 3} (0,5)^3 (1-0,5)^{10-3}=\frac{10!}{7! 3!} (0,5)^3 (0,5)^{7}=\frac{10*9*8}{6} (0,5)^{10}=0,1171875 \sim 11,7\%.
+\end{equation}\]</span>
+Es decir, aún cuando la frecuencia real en la población es de <span class="math inline">\(p=0,5\)</span>,
+en más de 1 de cada 10 muestras que tomemos, solo por azar, observaremos
+un conteo de 3 alelos. Esto puede parecer poco, pero si nos fijamos en
+la figura <a href="epidemio.html#fig:HWmuestrapeque2">2.1</a>(a), donde graficamos la probabilidad de
+observar cada uno de los 11 conteos posibles (de 0 a 10 alelos <span class="math inline">\(A_1\)</span>),
+resulta claro que la probabilidad de no acertar en el único número
+correcto (5 alelos), es realmente alta. De hecho, si calculamos la
+probabilidad de observar exactamente 5 alelos en 10, dada la frecuencia
+real de <span class="math inline">\(p=0,5\)</span>, esta probabilidad es igual a <span class="math inline">\(0,2460938\)</span>, por lo que la
+probabilidad de obtener el “verdadero” valor de <span class="math inline">\(p\)</span> en una muestra de
+este tamaño es igual a <span class="math inline">\(1-0,2460938=0,7539062 \sim 75,4\%\)</span>. Por otro
+lado, la probabilidad de tener un estimado de <span class="math inline">\(p \leq 0,3\)</span> es la suma de
+las probabilidades de obtener 0, 1, 2 o 3 conteos y esto es igual a
+<span class="math inline">\(0,171875 \sim 17,2\%\)</span> (el lector lo puede verificar fácilmente).<br />
+Claramente, de lo anterior surge que este tamaño muestral de 5
+individuos no nos conducirá a nada muy razonable. ¿Qué ocurriría si
+conseguimos aumentar el tamaño muestral a 50 individuos? Las
+probabilidades esperadas de los distintos conteos en la muestra
+aleatoria se grafican en la figura
+<a href="epidemio.html#fig:HWmuestrapeque2">2.1</a>(b). Ahora resulta claro que, por un lado,
+la “granularidad” de las barras es mucho más fina, es decir que la
+“precisión” de nuestros estimados podría ser mucho mayor y por el otro,
+que las estimaciones muy alejadas del “verdadero valor” son bastante
+improbables. Por ejemplo, ¿cuál sería la probabilidad de tener un
+estimado de <span class="math inline">\(p \leq 0,3\)</span>? En este caso se trata de la suma de las
+probabilidades de todos los conteos, de 0 a 30 (<span class="math inline">\(30/100=0,3\)</span>). En decir,
+se trata de la <strong>función de distribución</strong> (a veces conocida como
+probabilidad acumulada, o también CDF en inglés), que en este caso de la
+binomial, para un valor <span class="math inline">\(k\)</span> (30 en nuestro caso), sería
+<span class="math display" id="eq:CDFbinom">\[\begin{equation}
+Pr(X \leq k)=\sum_{x=0}^{k} {n\choose x} p^x (1-p)^{n-x}
+\tag{2.2}
+\end{equation}\]</span></p>
+<p>Sería algo tedioso calcularlo a mano, pero una
+primer idea del valor se puede tener observando la figura
+<a href="epidemio.html#fig:HWmuestrapeque2">2.1</a>(b), donde resulta claro que las
+probabilidades para conteos de hasta 30, son despreciables. De hecho,
+utilizando la función de distribución en cualquier software que la tenga
+implementada, la probabilidad de observar un conteo de 30 o menos alelos
+en 100 genotipados es de 3,92507x10<sup>-5</sup> (<span class="math inline">\(\sim 0,004\%\)</span>) si la
+frecuencia del alelo <span class="math inline">\(A_1\)</span> en la población es <span class="math inline">\(p=0,5\)</span>; o sea,
+prácticamente improbable. Si bien ahora también bajó la probabilidad de
+acertar exactamente en un estimado de <span class="math inline">\(p=0,5\)</span>
+(<span class="math inline">\(Pr(x=50)=0,07958924 \sim 8\%\)</span>), si aceptamos por comparación con la
+muestra de 5 individuos donde la probabilidad de observar exactamente 5
+alelos (probabilidades entre <span class="math inline">\(0,45\)</span> y <span class="math inline">\(0,55\)</span>) era de <span class="math inline">\(\sim 24,6\%\)</span>,
+ahora la posibilidad de observar entre 45 y 54 alelos (un intervalo de
+frecuencias equivalente), ahora con 50 individuos, concentra <span class="math inline">\(\sim 63\%\)</span>
+de la probabilidad. O dicho de otra manera, con una probabilidad similar
+a la de la muestra de 5 individuos, ahora los resultados se concentrarán
+(aproximadamente) entre 49 y 52 alelos. Claramente, nuestras
+estimaciones se vuelven mucho más precisas y útiles.</p>
+<p>Hasta acá, hicimos nuestras estimaciones de las frecuencias alélicas
+poblacionales (y por lo tanto la posibilidad de conocer nuestras
+expectativas para el equilibrio de Hardy-Weinberg) de una manera
+bastante sencilla ya que asumimos que, genómica mediante, podemos
+acceder al verdadero estado alélico (ADN, por ejemplo) de cada una de
+las muestras. Sin embargo, en muchos casos esto no es posible (porque,
+por ejemplo, no se conoce la base molecular de diferencias fenotípicas)
+o resulta impráctico y la única información disponible es la fenotípica.
+Es decir, ahora solo contamos con el conteo de los distintos fenotipos.
+Esto introduce un nuevo factor en el problema: es necesario conocer el
+modelo de herencia (mendeliana,
+<span acronym-label="codominancia" acronym-form="singular+short">codominancia</span>, etc.) para poder pasar de los fenotipos
+a los genotipos y de allí a las frecuencias de los alelos.</p>
+<p>Supongamos, para comenzar que <strong>el modelo de herencia es de <span acronym-label="codominancia" acronym-form="singular+short">codominancia</span></strong> en un locus autosomal con dos alelos (<span class="math inline">\(A_1\)</span>
+y <span class="math inline">\(A_2\)</span> en una especie diploide, es decir, ambos alelos se expresan en
+el fenotipo y hay una correspondencia biunívoca entre fenotipo y
+genotipo. En este caso, con dos alelos tenemos tres genotipos (que son
+identificables directamente), por lo que, en una muestra de <span class="math inline">\(n\)</span>
+individuos la frecuencia relativa (muestral) del alelo <span class="math inline">\(A_1\)</span> será igual
+a la suma de 2 veces el número de homocigotas <span class="math inline">\(A_1\)</span> más el número de
+heterocigotas, todo dividido entre 2 veces el número de individuos:
+<span class="math display">\[\begin{equation}
+\begin{split}
+p=\frac{2n_{A_1A_1}+n_{A_1A_2}}{2n}, q=\frac{2n_{A_2A_2}+n_{A_1A_2}}{2n}\\
+n=n_{A_1A_1}+n_{A_1A_2}+n_{A_2A_2}
+\end{split}
+\end{equation}\]</span>
+En todo caso, si conocemos los genotipos a nivel molecular (ver <a href="epidemio.html#ejemplo-2.1">Ejemplo 2.1</a>) la
+forma de resolverlo es análoga a si los genotipos se pueden “mapear” en
+forma biunívoca con los fenotipos (el fenotipo sería ahora igual al
+genotipo). Tanto si se trata de
+<span acronym-label="codominancia" acronym-form="singular+short">codominancia</span> como de
+dominancia parcial, lo relevante aquí es la posibilidad de
+distinguir los heterocigotos de ambos homocigotos, lo que nos permite
+simplemente hacer el “conteo” de alelos, ya que la base genética es
+clara (en diploides, los homocigotos poseen dos alelos del mismo tipo y
+los heterocigotos poseen uno de cada tipo).</p>
+<p>Las cosas empiezan a complicarse un poco más cuando <strong>aparece el efecto de dominancia</strong>. Supongamos, por ejemplo, que en el locus anterior (autosomal
+en especie diploide, con dos alelos), el alelo <span class="math inline">\(A_1\)</span> domina
+completamente al <span class="math inline">\(A_2\)</span>, es decir, tanto el <span class="math inline">\(A_1A_1\)</span> como el <span class="math inline">\(A_1A_2\)</span>
+tendrán idéntico fenotipo, mientras que el <span class="math inline">\(A_2A_2\)</span> tendrá un fenotipo
+diferente. Ahora el “conteo” de alelos en los fenotipos no alcanza para
+determinar las frecuencias de los dos alelos ya que los conteos del
+fenotipo <span class="math inline">\(A_1\)</span> corresponde al de dos genotipos (<span class="math inline">\(G_{11}=A_1A_1\)</span> y
+<span class="math inline">\(G_{12}=A_1A_2\)</span>), ambos con diferentes números de alelos <span class="math inline">\(A_1\)</span> y <span class="math inline">\(A_2\)</span>
+(2 y 0 para el homocigoto, 1 y 1 para el heterocigoto). Dicho de otra
+forma, sabemos calcular las frecuencias alélicas a partir de los 3
+genotipos, pero solo tenemos dos fenotipos (el del alelo dominante y el
+del alelo recesivo). De hecho, con solo esta información se trata de un
+problema indeterminado y para poder salir de esta situación debemos
+agregar algún tipo de información adicional. Una alternativa sencilla
+(suponiendo que no podemos conocer los genotipos, lo que resolvería
+todo) es <strong>asumir que la población se encuentra en equilibrio de Hardy-Weinberg, lo que establece una relación explícita entre frecuencias alélicas (lo desconocido) y genotipos</strong>. Es decir, si la
+población se encuentra en equilibrio de Hardy-Weinberg sabemos que la
+esperanza del número de individuos (homocigotos) <span class="math inline">\(A_2A_2\)</span>, la única
+clase de genotipo que en nuestro caso “mapea” a un solo fenotipo, es
+igual a <span class="math inline">\(nq^2\)</span>, con <span class="math inline">\(n=G_{1}.+G_{22}\)</span> y <span class="math inline">\(G_{1}.=G_{11}+G_{12}\)</span> el número
+de individuos con el fenotipo dominante. Esto nos deja con la
+posibilidad de despejar <span class="math inline">\(q\)</span>,
+<span class="math display" id="eq:HWrecesivos">\[\begin{equation}
+G_{22}=nq^2 \therefore q=\pm \sqrt{\frac{G_{22}}{n}}=\pm \sqrt{\frac{G_{22}}{G_1.+G_{22}}}
+\tag{2.3}
+\end{equation}\]</span>
+Es decir, de las dos raíces que tiene esta ecuación, una positiva y otra
+negativa, nuestra solución será la positiva, ya que no existen
+frecuencias negativas y por lo tanto no se trata de una solución válida.
+Es importante recalcar en este punto que la validez de nuestra
+estimación depende de que la población se encuentre en equilibrio de
+Hardy-Weinberg, pues de lo contrario no será una estimación que tenga
+alguna base teórica.<br />
+</p>
+<hr />
+<div id="ejemplo-2.1" class="section level4 unnumbered hasAnchor">
+<h4>Ejemplo 2.1<a href="epidemio.html#ejemplo-2.1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>La fenilcetonuria (PKU) es un error innato del
+metabolismo que resulta en una disminución del metabolismo del
+aminoácido fenilalanina como resultado de una deficiencia en la enzima
+fenilalanina hidroxilasa. El resultado de esto es la acumulación de
+fenilalanina a niveles potencialmente tóxicos. Desde el punto de vista
+del modelo de herencia se comporta como autosómica recesiva, por lo que
+es necesario heredar dos copias “defectuosas” del gen PAH (a decir
+verdad, que tengan actividad seriamente disminuída) para que la
+enfermedad se manifieste. La incidencia es muy variable de población en
+población, pero dos casos extremos podrían ser la población de
+Finlandia, con 1 afectado en 200 mil nacimientos y la población de
+Turquía, con 1 afectado en 2600 nacimientos.</p>
+<p><strong>Calcular para ambas poblaciones la frecuencia de “el” <a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a> alelo defectuoso, así como la
+proporción de portadores (que no manifiestan la enfermedad), asumiendo
+que las poblaciones se encuentran en equilibrio de Hardy-Weinberg.</strong></p>
+<p><br />
+</p>
+<p><strong>Solución:</strong></p>
+<p>Utilizando la ecuación <a href="epidemio.html#eq:HWrecesivos">(2.3)</a>, tenemos para los dos casos
+<span class="math display">\[\begin{equation}
+\begin{split}
+q_{Fin}=\sqrt{\frac{1}{200000}}=0,002236068 \sim 0,22\% \\
+q_{Tur}=\sqrt{\frac{1}{2600}}=0,01961161 \sim 1,96\%
+\end{split}
+\end{equation}\]</span>
+Los portadores serán los heterocigotos, por lo que, si asumimos que las
+poblaciones se encuentran en equilibrio de Hardy-Weinberg, entonces
+tendremos
+<span class="math display">\[\begin{equation}
+\begin{split}
+Het_{Fin}=2p_{Fin}q_{Fin}=2*(1-0,002236068)*0,002236068=0,004462136\sim 0,45\% \\
+Het_{Tur}=2p_{Tur}q_{Tur}=2*(1-0,01961161)*0,01961161=0,038454 \sim 3,85\%
+\end{split}
+\end{equation}\]</span></p>
+<hr />
+<p>En un estudio de metanálisis se identificaron diferentes estudios previos con información de la prevalencia de PKU para diferentes poblaciones del Mediterráneo oriental y panamercianas. Las prevalencias observadas fueron las siguientes: <span class="math inline">\(21.8,15.97,10.39,6.79,19.78,7.48,4.18,6.83,1.47,19.22\)</span> casos por 100.000 nacidos para las mediterráneas, mientras que fue de <span class="math inline">\(10.40,5.12,5.82,5.28,4.80,9.20\)</span> para las panamericanas. Vamos a estimar la frecuencia del alelo defectuoso en las diferentes poblaciones, pero ahora usando <strong>R</strong>.</p>
+<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="epidemio.html#cb200-1" aria-hidden="true" tabindex="-1"></a>prevalenciasM<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="fl">21.8</span>,<span class="fl">15.97</span>,<span class="fl">10.39</span>,<span class="fl">6.79</span>,<span class="fl">19.78</span>,<span class="fl">7.48</span>,<span class="fl">4.18</span>,<span class="fl">6.83</span>,<span class="fl">1.47</span>,<span class="fl">19.22</span>)<span class="sc">/</span><span class="fl">1e5</span></span>
+<span id="cb200-2"><a href="epidemio.html#cb200-2" aria-hidden="true" tabindex="-1"></a>(freqrecesivoM<span class="ot">&lt;-</span><span class="fu">sqrt</span>(prevalenciasM))</span></code></pre></div>
+<pre><code>##  [1] 0.014764823 0.012637247 0.010193135 0.008240146 0.014064139 0.008648699
+##  [7] 0.006465292 0.008264381 0.003834058 0.013863621</code></pre>
+<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="epidemio.html#cb202-1" aria-hidden="true" tabindex="-1"></a>prevalenciasA<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="fl">10.40</span>,<span class="fl">5.12</span>,<span class="fl">5.82</span>,<span class="fl">5.28</span>,<span class="fl">4.80</span>,<span class="fl">9.20</span>)<span class="sc">/</span><span class="fl">1e5</span></span>
+<span id="cb202-2"><a href="epidemio.html#cb202-2" aria-hidden="true" tabindex="-1"></a>(freqrecesivoA<span class="ot">&lt;-</span><span class="fu">sqrt</span>(prevalenciasA))</span></code></pre></div>
+<pre><code>## [1] 0.010198039 0.007155418 0.007628892 0.007266361 0.006928203 0.009591663</code></pre>
+<p><strong>¿Existen diferencias significativas entre estas poblaciones?</strong></p>
+<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb204-1"><a href="epidemio.html#cb204-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(prevalenciasA,prevalenciasM,<span class="at">col=</span><span class="fu">c</span>(<span class="st">&quot;red&quot;</span>,<span class="st">&quot;green&quot;</span>),<span class="at">varwidth=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<p><img src="HWEA2022_files/figure-html/chunk701-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb205-1"><a href="epidemio.html#cb205-1" aria-hidden="true" tabindex="-1"></a>(midf<span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="st">&quot;prevalencia&quot;</span><span class="ot">=</span><span class="fu">c</span>(prevalenciasA,prevalenciasM),<span class="st">&quot;poblacion&quot;</span><span class="ot">=</span><span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">&quot;A&quot;</span>,<span class="fu">length</span>(prevalenciasA)),<span class="fu">rep</span>(<span class="st">&quot;M&quot;</span>,<span class="fu">length</span>(prevalenciasM)))))</span></code></pre></div>
+<pre><code>##    prevalencia poblacion
+## 1    0.0001040         A
+## 2    0.0000512         A
+## 3    0.0000582         A
+## 4    0.0000528         A
+## 5    0.0000480         A
+## 6    0.0000920         A
+## 7    0.0002180         M
+## 8    0.0001597         M
+## 9    0.0001039         M
+## 10   0.0000679         M
+## 11   0.0001978         M
+## 12   0.0000748         M
+## 13   0.0000418         M
+## 14   0.0000683         M
+## 15   0.0000147         M
+## 16   0.0001922         M</code></pre>
+<div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb207-1"><a href="epidemio.html#cb207-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kruskal.test</span>(prevalencia<span class="sc">~</span>poblacion,<span class="at">data=</span>midf)</span></code></pre></div>
+<pre><code>## 
+##  Kruskal-Wallis rank sum test
+## 
+## data:  prevalencia by poblacion
+## Kruskal-Wallis chi-squared = 1.4235, df = 1, p-value = 0.2328</code></pre>
+<p>De acuerdo al gráfico, las diferencias parecen bastante notorias (menor prevalencia para las americanas), pero sin embargo, la misma no es estadísticamente significativa.</p>
+<p><br />
+</p>
+</div>
+<div id="ejercicio-2.1" class="section level4 unnumbered hasAnchor">
+<h4>Ejercicio 2.1<a href="epidemio.html#ejercicio-2.1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>En general, si bien en muchas enfermedades humanas y animales que se
+clasifican como de herencia mendeliana se considera que se trata de un
+solo alelo recesivo, a nivel molecular suelen co-existir varios alelos
+deletéreos que producen similar fenotipo. Demostrar que si en un locus
+existen dos alelos deletéreos recesivos respecto al alelo normal, bajo
+equilibrio de Hardy-Weinberg los resultados respecto al número de
+portadores y de enfermos son equivalentes a considerarlos como un solo
+alelo defectuoso.</p>
+<p><strong><em>Solución</em></strong>
+Supongamos que llamamos <span class="math inline">\(A_1\)</span> al alelo normal y <span class="math inline">\(A_2\)</span> y <span class="math inline">\(A_3\)</span> a los
+alelos defectuosos, con frecuencias respectivas <span class="math inline">\(p\)</span>, <span class="math inline">\(q\)</span> y <span class="math inline">\(r\)</span>,
+<span class="math inline">\(p+q+r=1\)</span>. Llamemos <span class="math inline">\(u=q+r\)</span> a la frecuencia de los dos alelos
+defectuosos sumados, o lo que es lo mismo, a la frecuencia de alelos
+defectuosos (como si fuera uno solo). De acuerdo a lo visto para más de
+un alelo, las frecuencias esperadas bajo equilibrio Hardy-Weinberg serán
+<span class="math display">\[\begin{aligned}
+(p+q+r)^2=p^2+q^2+r^2+2pq+2pr+2qr\end{aligned}\]</span> De estos genotipos, los
+enfermos serán aquellos que tengan 2 alelos defectuosos, sean cuales
+sean, o sea <span class="math inline">\(A_2A_2\)</span>, <span class="math inline">\(A_3A_3\)</span> y <span class="math inline">\(A_2A3\)</span>, es decir <span class="math display">\[\begin{aligned}
+q^2+r^2+2qr=(q+r)^2=u^2\end{aligned}\]</span> Es decir, demostramos que el
+número de enfermos esperados es equivalente a considerarlo como un solo
+alelo. Ahora, el número de portadores será la suma de los genotipos que
+tienen un solo alelo defectuoso y el otro normal, o sea <span class="math inline">\(A_1A_2\)</span> y
+<span class="math inline">\(A_1A_3\)</span>, es decir <span class="math display">\[\begin{aligned}
+2pq+2pr=2p(q+r)=2pu,\end{aligned}\]</span> con lo que queda demostrado que
+también la frecuencia de portadores es equivalente a considerarlo un
+solo alelo defectuoso.</p>
+<p><br />
+</p>
+</div>
+<div id="ejemplo-2.2" class="section level4 unnumbered hasAnchor">
+<h4>Ejemplo 2.2<a href="epidemio.html#ejemplo-2.2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>En una enfermedad con base genética de carácter recesivo fueron identificados 5 variantes (alelos) que son disruptivas a nivel de la proteína codificada. Las frecuencias de estas 5 variantes fueron las siguientes: <span class="math inline">\(D^-_1=0.030, D^-_2=0.017, D^-_3=0.041,D^-_4=0.001,D^-_5=0.011\)</span>. Calcular la proporción de enfermos esperada de acuerdo al equilibrio de Hardy-Weinberg.</p>
+<p>De acuerdo a lo que vimos previamente, alcanza con sumar las frecuencias de todos los alelos deletéreos recesivos y luego calcular el cuadrado de este número, es decir:</p>
+<div class="sourceCode" id="cb209"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb209-1"><a href="epidemio.html#cb209-1" aria-hidden="true" tabindex="-1"></a>fdel<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="fl">0.030</span>, <span class="fl">0.017</span>, <span class="fl">0.041</span>,<span class="fl">0.001</span>,<span class="fl">0.011</span>)</span>
+<span id="cb209-2"><a href="epidemio.html#cb209-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(fdel)<span class="ot">&lt;-</span><span class="fu">paste</span>(<span class="st">&quot;D&quot;</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,<span class="at">sep=</span><span class="st">&quot;&quot;</span>)</span>
+<span id="cb209-3"><a href="epidemio.html#cb209-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(fdel)</span></code></pre></div>
+<pre><code>## [1] 0.1</code></pre>
+<div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb211-1"><a href="epidemio.html#cb211-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(fdel)<span class="sc">^</span><span class="dv">2</span></span></code></pre></div>
+<pre><code>## [1] 0.01</code></pre>
+<p>La otra forma, es calcular la proporción esperada de cada genotipo recesivo (es decir, la combinación de un alelo recesivo por parte de padre con uno recesivo de parte de madre) y sumar todos los resultados:</p>
+<div class="sourceCode" id="cb213"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb213-1"><a href="epidemio.html#cb213-1" aria-hidden="true" tabindex="-1"></a>matprop<span class="ot">&lt;-</span>fdel<span class="sc">%*%</span><span class="fu">t</span>(fdel)</span>
+<span id="cb213-2"><a href="epidemio.html#cb213-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(matprop)<span class="ot">&lt;-</span><span class="fu">names</span>(fdel)</span>
+<span id="cb213-3"><a href="epidemio.html#cb213-3" aria-hidden="true" tabindex="-1"></a>matprop</span></code></pre></div>
+<pre><code>##         D1       D2       D3      D4       D5
+## D1 0.00090 0.000510 0.001230 3.0e-05 0.000330
+## D2 0.00051 0.000289 0.000697 1.7e-05 0.000187
+## D3 0.00123 0.000697 0.001681 4.1e-05 0.000451
+## D4 0.00003 0.000017 0.000041 1.0e-06 0.000011
+## D5 0.00033 0.000187 0.000451 1.1e-05 0.000121</code></pre>
+<div class="sourceCode" id="cb215"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb215-1"><a href="epidemio.html#cb215-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(matprop)</span></code></pre></div>
+<pre><code>## [1] 0.01</code></pre>
+<p>que, obviamente, nos da el mismo resultado. Sin embargo, si las distintas combinaciones de alelos presentan diferente severidad, puede ser importante conocer las frecuencias esperadas de cada tipo de combinación. En este sentido, es muy fácil de obtener este resultado ya que lo único que tenemos que hacer es multiplicar por 2 las proporciones de los heterocigotos (porque hay dos combinaciones de alelo padre y alelo madre que producen el mismo genotipo), mientras que las frecuencias de los homocigotos (diagonla de la matriz) es la que ya aparece ahí. Una forma de hacer esto es la siguiente:</p>
+<div class="sourceCode" id="cb217"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb217-1"><a href="epidemio.html#cb217-1" aria-hidden="true" tabindex="-1"></a><span class="fu">upper.tri</span>(matprop)<span class="sc">*</span>matprop<span class="sc">+</span><span class="fu">upper.tri</span>(matprop,<span class="at">diag=</span><span class="cn">TRUE</span>)<span class="sc">*</span>matprop</span></code></pre></div>
+<pre><code>##       D1       D2       D3      D4       D5
+## D1 9e-04 0.001020 0.002460 6.0e-05 0.000660
+## D2 0e+00 0.000289 0.001394 3.4e-05 0.000374
+## D3 0e+00 0.000000 0.001681 8.2e-05 0.000902
+## D4 0e+00 0.000000 0.000000 1.0e-06 0.000022
+## D5 0e+00 0.000000 0.000000 0.0e+00 0.000121</code></pre>
+<div class="sourceCode" id="cb219"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb219-1"><a href="epidemio.html#cb219-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">upper.tri</span>(matprop)<span class="sc">*</span>matprop<span class="sc">+</span><span class="fu">upper.tri</span>(matprop,<span class="at">diag=</span><span class="cn">TRUE</span>)<span class="sc">*</span>matprop)</span></code></pre></div>
+<pre><code>## [1] 0.01</code></pre>
+</div>
+</div>
+<div id="el-sistema-abo-introducción-teórica" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> El sistema ABO (introducción teórica)<a href="epidemio.html#el-sistema-abo-introducción-teórica" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>En general la relación entre los distintos alelos de un locus suele ser
+más complicada, en principio porque existen más de dos alelos cuyo
+impacto en el fenotipo es distinguible, así como las relaciones entre
+los mismos, que muchas veces implican diferentes modos de herencia (por
+ejemplo, dominancia y codominancia en el mismo locus). Un ejemplo de
+esto es el sistema de grupos sanguíneos ABO, el más importante en
+humanos,<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a> cuya herencia (en forma simplificada) puede apreciarse en
+la figura <a href="epidemio.html#fig:ABOsystem">2.2</a>.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:ABOsystem"></span>
+<img src="figuras/ABOsystem.png" alt="Sistema de determinación sanguínea ABO. Los alelos A y B muestran codominancia entre sí, mientras que ambos son dominantes respecto al O. Figura de Dominio Público tomada de Wikipedia (&quot;ABO system codominance.svg&quot;)." width="80%" />
+<p class="caption">
+Figura 2.2: Sistema de determinación sanguínea ABO. Los alelos A y B muestran codominancia entre sí, mientras que ambos son dominantes respecto al O. Figura de Dominio Público tomada de Wikipedia (“ABO system codominance.svg”).
+</p>
+</div>
+<p>Básicamente, mientras que tanto el alelo <em><span class="math inline">\(I^A\)</span></em> como el <em><span class="math inline">\(I^B\)</span></em>
+producen antígenos de superficie en los eritrocitos (glóbulos rojos de
+la sangre) , respectivamente <strong>A</strong> y <strong>B</strong>, y dominan al alelo <em><span class="math inline">\(i\)</span></em> que
+no produce antígenos de superficie (<strong>O</strong>), la relación entre el <em><span class="math inline">\(I^A\)</span></em>
+y el <em><span class="math inline">\(I^B\)</span></em> es de codominancia, expresándose ambos antígenos en la
+superficie de los eritrocitos. En función de esto, tendremos desde el
+punto de vista fenotípico para los test de aglutinación (test
+inmunológico de rutina) cuatro fenotipos diferentes (supongamos que las
+frecuencias de <em><span class="math inline">\(I^A\)</span></em>, <em><span class="math inline">\(I^B\)</span></em> e <em><span class="math inline">\(i\)</span></em> son <span class="math inline">\(p\)</span>, <span class="math inline">\(q\)</span> y <span class="math inline">\(r\)</span>
+respectivamente):</p>
+<ul>
+<li><p>A, formado por los homocigotos del alelo <em><span class="math inline">\(I^A\)</span></em> , más los
+heterocigotos del alelo <em><span class="math inline">\(I^A\)</span></em> y el alelo <em><span class="math inline">\(i\)</span></em> (<span class="math inline">\(p^2+2pr\)</span>)</p></li>
+<li><p>B, formado por los homocigotos del alelo <em><span class="math inline">\(I^B\)</span></em> , más los
+heterocigotos del alelo <em><span class="math inline">\(I^B\)</span></em> y el alelo <em><span class="math inline">\(i\)</span></em> (<span class="math inline">\(q^2+2qr\)</span>)</p></li>
+<li><p>AB, formado por los heterocigotos del alelo <em><span class="math inline">\(I^A\)</span></em> y el alelo
+<em><span class="math inline">\(I^B\)</span></em> (<span class="math inline">\(2pq\)</span>)</p></li>
+<li><p>O, formado por los homocigotos del alelo <em><span class="math inline">\(i\)</span></em> (<span class="math inline">\(r^2\)</span>)</p></li>
+</ul>
+<p>Ahora, la estimación de las tres frecuencias a partir del conteo ya no
+es tan sencillo como ahora. Por un lado tenemos 3 alelos en lugar de
+dos, pero lo que realmente complica el panorama es la relación de
+dominancia-codominancia entre alelos. De hecho, ya no hay un mapeo entre
+los homocigotos y fenotipos particulares, lo que solo ocurre en el caso
+del O.<br />
+</p>
+</div>
+<div id="la-estimación-de-frecuencias-en-el-locus-abo" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> La estimación de frecuencias en el locus ABO<a href="epidemio.html#la-estimación-de-frecuencias-en-el-locus-abo" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Los métodos elaborados para la estimación de las frecuencias hacen
+uso del concepto de máxima verosimilitud, pero <span class="citation">(<a href="#ref-pmid6598211" role="doc-biblioref">Yasuda 1984</a>)</span> propuso un
+método sencillo basado en conteo. Supongamos que <span class="math inline">\(T=A+B+AB+O\)</span>, es decir
+el total de individuos de los distintos fenotipos. Trabajaremos con la
+determinación de <span class="math inline">\(p\)</span>, la frecuencia del alelo <span class="math inline">\(I^A\)</span>, pero para <span class="math inline">\(q\)</span> (la
+frecuencia del <span class="math inline">\(I^B\)</span>) la situación es idéntica por simetría y basta con
+sustituir A por B e <span class="math inline">\(I^A\)</span> por <span class="math inline">\(I^B\)</span>. La frecuencia del alelo <span class="math inline">\(I^A\)</span> será
+igual a la cantidad total de alelos <span class="math inline">\(I^A\)</span> en los fenotipos que tienen
+este alelo, es decir A (<span class="math inline">\(I^AI^A\)</span>) y AO (<span class="math inline">\(I^Ai\)</span>) que solo expresan el A,
+más el AB (<span class="math inline">\(I^AI^B\)</span>) que expresa los dos alelos, todo dividido entre
+<span class="math inline">\(2T\)</span> que es el número total de alelos en los individuos. En el primer
+caso hay dos alelos <span class="math inline">\(I^A\)</span> por cada individuo, mientras que en los otros
+dos hay solo un alelo por individuo. Sin embargo, nosotros no podemos
+distinguir los 3 fenotipos, ya que tanto el A como el AO solo expresan
+el alelo <span class="math inline">\(I^A\)</span>, por lo que debemos buscar una forma de separar el aporte
+de cada uno de estos genotipos al conteo. Mientras que el <span class="math inline">\(I^Ai\)</span> aporta
+un alelo <span class="math inline">\(I^A\)</span>, el <span class="math inline">\(I^AI^A\)</span> aporta dos alelos, por lo que todos los
+fenotipos A aportarán un alelo, mientras que una cierta fracción (los
+homocigotos) aportará un segundo alelo también. ¿Cuál es la fracción
+del fenotipo A que corresponde a los homocigotas <span class="math inline">\(I^AI^A\)</span>? De acuerdo a
+lo predicho por el equilibrio de Hardy-Weinberg, los homocigotas
+<span class="math inline">\(I^AI^A\)</span> serán <span class="math inline">\(p^2\)</span>, mientras que los heterocigotas <span class="math inline">\(I^Ai\)</span> serán <span class="math inline">\(2pr\)</span>,
+por lo que la fracción de homocigotas <span class="math inline">\(h_A\)</span> será</p>
+<p><span class="math display" id="eq:hA">\[\begin{equation}
+h_A=\frac{p^2}{p^2+2pr}=\frac{p^2}{p(p+2r)}=\frac{p}{p+2r}
+\tag{2.4}
+\end{equation}\]</span></p>
+<p>Es decir, si sumamos las contribuciones de AB, todos los A y el resto de
+los A homocigotos, tenemos</p>
+<p><span class="math display" id="eq:pYasuda">\[\begin{equation}
+p=\frac{[AB+A+Ah_A]}{2T}
+\tag{2.5}
+\end{equation}\]</span></p>
+<p>Si definimos a partir de los fenotipos observables A y O, <span class="math inline">\(k_A=O/(A+O)\)</span>, entonces podemos expresar
+<span class="math inline">\(k_A\)</span> en términos de lo esperable bajo equilibrio Hardy-Weinberg como</p>
+<p><span class="math display" id="eq:kA">\[\begin{equation}
+k_A=\frac{Tr^2}{T(p^2+2pr)+Tr^2}= \frac{r^2}{p^2+2pr+r^2}=\frac{r^2}{(p+r)^2}=[r/(p+r)]^2\\ \therefore \sqrt{k_A}=\frac{r}{(p+r)}
+\tag{2.6}
+\end{equation}\]</span></p>
+<p>¿Cuál es la relación entre <span class="math inline">\(h_A\)</span> y <span class="math inline">\(k_A\)</span>? Usando las definiciones de <span class="math inline">\(h_A\)</span> (ecuación <a href="epidemio.html#eq:hA">(2.4)</a>) y <span class="math inline">\(k_A\)</span> (ecuación <a href="epidemio.html#eq:kA">(2.6)</a>), tenemos que</p>
+<p><span class="math display" id="eq:hAkA">\[\begin{equation}
+h_A=\frac{p}{p+2r}=\frac{p+r-r}{p+r+r}=\frac{\frac{p+r-r}{p+r}}{\frac{p+r+r}{p+r}}=\frac{\frac{p+r}{p+r}-\frac{r}{p+r}}{\frac{p+r}{p+r}+\frac{r}{p+r}}=\frac{1-\frac{r}{p+r}}{1+\frac{r}{p+r}}=\frac{1-\sqrt{k_A}}{1+\sqrt{k_A}}\\
+h_A=\frac{1-\sqrt{k_A}}{1+\sqrt{k_A}}=\frac{(1-\sqrt{k_A})}{(1+\sqrt{k_A})} \frac{(1-\sqrt{k_A})}{(1-\sqrt{k_A})}=\frac{(1-\sqrt{k_A})^2}{1-k_A}
+\tag{2.7}
+\end{equation}\]</span></p>
+<p>¡Excelente! Tenemos la relación entre <span class="math inline">\(h_A\)</span> y <span class="math inline">\(k_A\)</span> (expresada de dos
+formas), pero aún nos falta llegar a una forma de <span class="math inline">\(h_A\)</span> que sea una
+función de cantidades observables, es decir los fenotipos. Si recordamos
+la definición de <span class="math inline">\(k_A\)</span> a partir de los fenotipos observables
+(<span class="math inline">\(k_A=O/(A+O)\)</span>) y sustituimos en la ecuación
+<a href="epidemio.html#eq:hAkA">(2.7)</a>, tenemos</p>
+<p><span class="math display">\[\begin{equation}
+h_A=\frac{(1-\sqrt{k_A})^2}{1-k_A}  \Leftrightarrow  h_A (1-k_A)=(1-\sqrt{k_A})^2 \Leftrightarrow h_A (1-\frac{O}{A+O})=1-2\sqrt{k_A}+k_A\\
+h_A \frac{A+O-O}{A+O}=1-\sqrt{\frac{O}{A+O}}+\frac{O}{A+O} \Leftrightarrow h_A \frac{A}{A+O}=\\
+=\frac{A+O}{A+O} \frac{\sqrt{A+O}\sqrt{O}}{\sqrt{A+O}\sqrt{A+O}}+\frac{O}{A+O}=\frac{(A+O)-2\sqrt{O(A+O)}+O}{A+O} \Leftrightarrow \\
+Ah_A=A+O-2\sqrt{O(A+O)}+O \therefore Ah_A=A+2O-2\sqrt{O(A+O)}
+\end{equation}\]</span></p>
+<p>Finalmente, si volvemos al principio con este resultado y sustituimos en
+<a href="epidemio.html#eq:pYasuda">(2.5)</a>, tenemos el estimador basado en conteo
+<span class="math display">\[\begin{equation}
+\hat{p}=\frac{[AB+A+Ah_A]}{2T}=\frac{[AB+A+A+2O-2\sqrt{O(A+O)}]}{2T} \therefore \\
+\hat{p}=\frac{[(1/2)AB+A+O-\sqrt{O(A+O)}]}{T}
+\end{equation}\]</span></p>
+<p>Analogamente, por simetría, para la estimación de <span class="math inline">\(q\)</span> tenemos</p>
+<p><span class="math display">\[\begin{equation}
+\hat{q}=\frac{[(1/2)AB+B+O-\sqrt{O(B+O)}]}{T}
+\end{equation}\]</span></p>
+<p>y por lo tanto, <span class="math inline">\(\hat{r}=1-\hat{p}-\hat{q}\)</span>. Sencillo, ¿no?</p>
+<hr />
+<div id="ejemplo-2.3" class="section level4 unnumbered hasAnchor">
+<h4>Ejemplo 2.3<a href="epidemio.html#ejemplo-2.3" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Entre donantes de sangre de la ciudad de Ankara
+(Turquía) se determinó que de 1500 donantes sanos se observaron 669 del
+grupo A, 484 del grupo O, 232 del grupo B y 115 del grupo AB.</p>
+<p><strong>Utilizando los estimadores que propuso</strong> <span class="citation">(<a href="#ref-pmid6598211" role="doc-biblioref">Yasuda 1984</a>)</span> <strong>estimar las frecuencias de los alelos <span class="math inline">\(I^A\)</span>, <span class="math inline">\(I^B\)</span> e <span class="math inline">\(i\)</span>, así como el número esperado de los distintos fenotipos si la población estuviese en equilibrio de Hardy-Weinberg.</strong></p>
+<p><br />
+<strong>Solución:</strong></p>
+<p><span class="math display">\[\begin{equation*}
+\hat{p}=\frac{[(1/2)AB+A+O-\sqrt{O(A+O)}]}{T}=\frac{((115/2)+669+484-\sqrt{(484(669+484))})}{1500}=0,3089808 \\
+\hat{q}=\frac{[(1/2)AB+B+O-\sqrt{O(B+O)}]}{T}=\frac{((115/2)+232+484-\sqrt{(484(232+484))})}{1500}=0,1232134 \\
+\hat{r}=1-\hat{p}-\hat{q}=1-0,3089808-0,1232134=0,5678058
+\end{equation*}\]</span></p>
+<p>De acuerdo a las frecuencias estimadas previamente, el número esperado
+de cada fenotipo sería</p>
+<p><span class="math display">\[\begin{equation*}
+E(A)=(p^2+2pr)T=(0,3089808^2+2\cdot 0,3089808\cdot 0,5678058)\cdot 1500=669,527
+\sim 670\\
+E(B)=(q^2+2qr)T=(0,1232134^2+2\cdot 0,1232134\cdot 0,5678058)\cdot 1500=232,6562
+\sim 233\\
+E(AB)=2pqT=2\cdot 0,3089808\cdot 0,1232134\cdot 1500=114,2117 \sim 114 \\
+E(O)=r^2T=0,5678058^2\cdot 1500=483,6051=484,
+\end{equation*}\]</span></p>
+<p>lo que coincide estrechamente con los números observados, por lo que <strong>no podemos descartar que la población se encuentre en equilibrio Hardy-Weinberg</strong> (en general no podemos resolver a favor de una hipótesis alternativa basados en la estadística, a lo sumo podemos afirmar que la misma es completamente improbable dados los supuestos del test que aplicamos).</p>
+<p><br />
+</p>
+<hr />
+</div>
+<div id="ejercicio-2.2" class="section level4 unnumbered hasAnchor">
+<h4>Ejercicio 2.2<a href="epidemio.html#ejercicio-2.2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Asumiendo que las poblaciones en las que se va a aplicar se encuentran
+en equilibrio de Hardy-Weinberg, desarrollar un estimador de las
+frecuencias de los tres alelos del grupo sanguíneo ABO (<span class="math inline">\(p\)</span>, <span class="math inline">\(q\)</span> y <span class="math inline">\(r\)</span>)
+basado en el conteo de los individuos O y AB (desambiguando <span class="math inline">\(p\)</span> y <span class="math inline">\(q\)</span> si
+fuese necesario a través de sus respectivos conteos). ¿Qué problema
+obvio tiene este estimador? A partir de las siguentes frecuencias genotípicas
+estimar las frecuencias alélicas y fenotípicas y comentarlas en relación
+a los datos observados: 669 del grupo A, 484 del grupo O, 232 del grupo B y 115 del grupo AB.</p>
+<p><strong><em>Solución</em></strong>
+Tanto el fenotipo O como el AB mapean cada uno a un solo genotipo, por
+lo que su conteo no implica suma de aportes de genotipos diferentes. Si
+asumimos equilibrio de Hardy-Weinberg y que <span class="math inline">\(T=A+B+O+AB\)</span>, <span class="math inline">\(p+q+r=1\)</span>,
+tenemos
+<span class="math display" id="eq:ejHWABOe1">\[\begin{equation*}
+\begin{split}
+AB=2pqT \\
+O=r^2T \Leftrightarrow r=\sqrt{\frac{O}{T}} \\
+p+q+r=1 \Rightarrow p+q+\sqrt{\frac{O}{T}}=1 \Leftrightarrow \\
+\end{split}
+\tag{2.8}
+\end{equation*}\]</span></p>
+<p><span class="math display" id="eq:ejHWABOe2">\[\begin{equation*}
+\begin{split}
+\Leftrightarrow p=1-q-\sqrt{\frac{O}{T}}
+\end{split}
+\tag{2.9}
+\end{equation*}\]</span></p>
+<p>Sustituyendo <a href="epidemio.html#eq:ejHWABOe2">(2.9)</a> en <a href="epidemio.html#eq:ejHWABOe1">(2.8)</a> para quedarnos con una sola variable (<span class="math inline">\(q\)</span>),
+tenemos
+<span class="math display">\[\begin{equation*}
+\begin{split}
+2qT(1-q-\sqrt{\frac{O}{T}})=AB \Leftrightarrow 2q-2q^2-2q\sqrt{\frac{O}{T}}=\frac{AB}{T} \Leftrightarrow q^2+(\sqrt{\frac{O}{T}}-1)q+\frac{AB}{2T}=0 \\
+\end{split}
+\end{equation*}\]</span>
+Se trata de una ecuación de segundo grado, por lo que utilizando la
+fórmula clásica (atribuida al matemático indio Bhaskaracharya), tenemos
+que nuestro estimador de <span class="math inline">\(q\)</span> es
+<span class="math display">\[\begin{equation*}
+\hat{q}=\frac{(1-\sqrt{\frac{O}{T}}) \pm \sqrt{(\sqrt{\frac{O}{T}}-1)^2-\frac{2AB}{T}}}{2}
+\end{equation*}\]</span>
+Es de notar que esto nos deja con dos soluciones, pero como con la
+información que utilizamos <span class="math inline">\(p\)</span> y <span class="math inline">\(q\)</span> no son identificables (si
+hubiésemos cambiado <span class="math inline">\(p\)</span> por <span class="math inline">\(q\)</span> el resultado sería idéntico), debemos
+usar la información de conteo de A y B para desambiguar las dos
+soluciones de nuestro estimador (la solución mayor correponde al conteo
+mayor entre A y B). El defecto obvio es que nuestro estimador no hace
+uso de toda la información disponible, una propiedad indeseable de los
+estimadores que discutiremos en otro capítulo.</p>
+<p>Para determinar la frecuencia de <span class="math inline">\(r\)</span> hacemos
+<span class="math inline">\(r=\sqrt{O/T}=\sqrt{484/1500}=0,5680376\)</span>, mientras que para las de <span class="math inline">\(p\)</span> y
+<span class="math inline">\(q\)</span> aplicamos la de nuestro estimador anterior
+<span class="math display">\[\begin{equation}
+\begin{split}
+\hat{q}=\frac{(1-\sqrt{\frac{O}{T}}) \pm \sqrt{(\sqrt{\frac{O}{T}}-1)^2-\frac{2AB}{T}}}{2}=\frac{(1-\sqrt{\frac{484}{1500}}) \pm \sqrt{(\sqrt{\frac{484}{1500}}-1)^2-\frac{2*115}{1500}}}{2}=\\
+=[0,3071654(+), 0,124797(-)]
+\end{split}
+\end{equation}\]</span>
+La primera correspondería a <span class="math inline">\(p\)</span> (por el mayor conteo de A respecto a B).
+Ahora, la frecuencias esperadas de los distintos fenotipos serían</p>
+<p><span class="math display">\[\begin{equation*}
+\begin{split}
+E(A)=(p^2+2pr)T=(0,3071654^2+2*0,3071654*0,5680376)*1500=664.9704
+\sim 665 (669)\\
+E(B)=(q^2+2qr)T=(0,124797^2+2*0,124797*0,5680376)*1500=236,0296
+\sim 236 (232)\\
+E(AB)=2pqT=2*0,3071654*0,124797*1500=114,2117 \sim 115 (115)\\
+E(O)=r^2T=0,5680376^2*1500=484,0001 \sim 484 (484),
+\end{split}
+\end{equation*}\]</span></p>
+<p>Por lo tanto, si bien existe un ajuste razonable en este caso
+particular, existen algunas diferencias respecto a los datos observados
+en los dos fenotipos de los cuales no usamos la información (excepto
+marginalmente para decidir cuál solución debería ser <span class="math inline">\(p\)</span> y cuál <span class="math inline">\(q\)</span>).</p>
+<hr />
+</div>
+</div>
+<div id="clinvar" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> ClinVar<a href="epidemio.html#clinvar" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Recuperar la información de la base de datos ClinVar suele ser de mucha importancia a la hora de anotar las variantes de un VCF, por ejemplo. Un paquete que me permite hacer este tipo de anotaciones es <strong>clinvaR</strong>. Para recuperar la información de la última versión, podemos hacer los siguiente:</p>
+<div class="sourceCode" id="cb221"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb221-1"><a href="epidemio.html#cb221-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages(&quot;devtools&quot;)</span></span>
+<span id="cb221-2"><a href="epidemio.html#cb221-2" aria-hidden="true" tabindex="-1"></a><span class="co"># devtools::install_github(&quot;jamesdiao/clinvaR&quot;)</span></span>
+<span id="cb221-3"><a href="epidemio.html#cb221-3" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(clinvaR)</span></code></pre></div>
+<pre><code>## Loading required package: clinvaR</code></pre>
+<pre><code>## Loading required package: ggplot2</code></pre>
+<pre><code>## Loading required package: dplyr</code></pre>
+<pre><code>## 
+## Attaching package: &#39;dplyr&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:biomaRt&#39;:
+## 
+##     select</code></pre>
+<pre><code>## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     filter, lag</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     intersect, setdiff, setequal, union</code></pre>
+<pre><code>## Loading required package: tidyr</code></pre>
+<pre><code>## Loading required package: seqminer</code></pre>
+<pre><code>## Loading required package: stringr</code></pre>
+<pre><code>## Loading required package: RCurl</code></pre>
+<pre><code>## 
+## Attaching package: &#39;RCurl&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:tidyr&#39;:
+## 
+##     complete</code></pre>
+<pre><code>## The following object is masked from &#39;package:adegenet&#39;:
+## 
+##     pop</code></pre>
+<pre><code>## The following object is masked from &#39;package:bit&#39;:
+## 
+##     clone</code></pre>
+<pre><code>## Loading required package: knitr</code></pre>
+<div class="sourceCode" id="cb238"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb238-1"><a href="epidemio.html#cb238-1" aria-hidden="true" tabindex="-1"></a>newest_clinvar <span class="ot">&lt;-</span> <span class="fu">get_clinvar</span>(<span class="fu">Sys.Date</span>())</span>
+<span id="cb238-2"><a href="epidemio.html#cb238-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(newest_clinvar)</span></code></pre></div>
+<pre><code>## [1] 253110     11</code></pre>
+<div class="sourceCode" id="cb240"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb240-1"><a href="epidemio.html#cb240-1" aria-hidden="true" tabindex="-1"></a>newest_clinvar[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,]</span></code></pre></div>
+<pre><code>##         VAR_ID  GENE CHROM    POS REF ALT          ID CLNSIG
+## 1 1_949523_C_T ISG15     1 949523   C   T rs786201005      5
+## 2 1_949608_G_A ISG15     1 949608   G   A      rs1921      2
+## 3 1_949739_G_T ISG15     1 949739   G   T rs672601312      5
+## 4 1_955563_G_C  AGRN     1 955563   G   C rs539283387      3
+## 5 1_955596_C_G  AGRN     1 955596   C   G rs764659938      0
+##                                                 CLNDBN
+## 1 Immunodeficiency_38_with_basal_ganglia_calcification
+## 2                                        not_specified
+## 3 Immunodeficiency_38_with_basal_ganglia_calcification
+## 4                                        not_specified
+## 5                                         not_provided
+##   pathogenic_incl_conflicts pathogenic_no_conflicts
+## 1                      TRUE                    TRUE
+## 2                     FALSE                   FALSE
+## 3                      TRUE                    TRUE
+## 4                     FALSE                   FALSE
+## 5                     FALSE                   FALSE</code></pre>
+<p>Veamos que cromosomas están representados en lo recuperado del ClinVar.</p>
+<div class="sourceCode" id="cb242"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb242-1"><a href="epidemio.html#cb242-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(newest_clinvar<span class="sc">$</span>CHROM)</span></code></pre></div>
+<pre><code>## 
+##     1    10    11    12    13    14    15    16    17    18    19     2    20 
+## 19099  9615 16403 12387  8350  7538  7887 13651 17654  4287 11803 28022  4435 
+##    21    22     3     4     5     6     7     8     9    MT     X     Y 
+##  3020  4468 12748  7330 13485  9463 11109  7855 11147   474 10859    21</code></pre>
+<p>Si queremos ver cuantas de las variantes en nuestro juego de datos de genotipos en las distintas poblaciones se encuentra en la base de datos de ClinVar y luego unir la información, podemos hacer:</p>
+<div class="sourceCode" id="cb244"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb244-1"><a href="epidemio.html#cb244-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(snps<span class="sc">$</span>ID<span class="sc">%in%</span>newest_clinvar<span class="sc">$</span>ID)</span></code></pre></div>
+<pre><code>## [1] 396</code></pre>
+<div class="sourceCode" id="cb246"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb246-1"><a href="epidemio.html#cb246-1" aria-hidden="true" tabindex="-1"></a>misnps.clinv<span class="ot">&lt;-</span><span class="fu">merge</span>(snps,newest_clinvar,<span class="at">by=</span><span class="st">&quot;ID&quot;</span>)</span>
+<span id="cb246-2"><a href="epidemio.html#cb246-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(misnps.clinv)</span></code></pre></div>
+<pre><code>## [1] 402  18</code></pre>
+<div class="sourceCode" id="cb248"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb248-1"><a href="epidemio.html#cb248-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(misnps.clinv)</span></code></pre></div>
+<pre><code>##           ID CHROM.x     POS.x REF.x ALT.x QUAL FILTER INFO           VAR_ID
+## 1 rs10037067       5  89985882     1     3 &lt;NA&gt;   &lt;NA&gt;   PR   5_89985882_A_G
+## 2 rs10063294       5  35877505     3     1 &lt;NA&gt;   &lt;NA&gt;   PR   5_35877505_G_A
+## 3 rs10063424       5 169535522     2     4 &lt;NA&gt;   &lt;NA&gt;   PR  5_169535522_T_C
+## 4 rs10103355       8  17918934     3     1 &lt;NA&gt;   &lt;NA&gt;   PR   8_17918934_A_G
+## 5 rs10129889      14 102508056     2     1 &lt;NA&gt;   &lt;NA&gt;   PR 14_102508056_C_A
+## 6 rs10138997      14  45606287     2     4 &lt;NA&gt;   &lt;NA&gt;   PR  14_45606287_C_T
+##      GENE CHROM.y     POS.y REF.y ALT.y       CLNSIG
+## 1  ADGRV1       5  89985882     A     G          255
+## 2    IL7R       5  35877505     G     A            2
+## 3   FOXI1       5 169535522     T     C      2, 2, 2
+## 4   ASAH1       8  17918934     A     G         2, 2
+## 5 DYNC1H1      14 102508056     C     A 255, 3, 3, 3
+## 6   FANCM      14  45606287     C     T         2, 2
+##                                                                                                                        CLNDBN
+## 1                                                                                                               not_specified
+## 2                                                                                           Severe_Combined_Immune_Deficiency
+## 3                                                     not_specified, Nonsyndromic_Hearing_Loss\\x2c_Mixed, Pendred&#39;s_syndrome
+## 4                                                                                  not_specified, Farber&#39;s_lipogranulomatosis
+## 5 not_specified, Intellectual_Disability\\x2c_Dominant, Charcot-Marie-Tooth\\x2c_Type_2, Spinocerebellar_Ataxia\\x2c_Dominant
+## 6                                                                                               not_specified, Fanconi_anemia
+##   pathogenic_incl_conflicts pathogenic_no_conflicts
+## 1                     FALSE                   FALSE
+## 2                     FALSE                   FALSE
+## 3                     FALSE                   FALSE
+## 4                     FALSE                   FALSE
+## 5                     FALSE                   FALSE
+## 6                     FALSE                   FALSE</code></pre>
+<p>Notar que la función <em>merge()</em> me permite unir ambas tablas por una columna en común (en nuestro caso, la columna “ID” que en ambas tablas posee información similar). Algunas de las columnas de la tabla recuperada de ClinVar se interpretan por si solas, pero otras requieren algo de ayuda. Los códigos de <strong>CLNSIG</strong> son los siguientes.</p>
+<p><strong>CLNSIG: Variant Clinical Significance</strong></p>
+<p>0 - unknown
+1 - untested
+2 - non-pathogenic
+3 - probable-non-pathogenic
+4 - probable-pathogenic
+5 - pathogenic
+6 - drug-response
+7 - histocompatibility
+255 - other</p>
+<p>Por otro lado, la columna <strong>CLNDSDB</strong> contiene la información <strong>Variant disease database name</strong>, es decir, el nombre de enfermedad en la base de datos.</p>
+<p>Veamos si ahora podemos recuperar información de variantes con algún tipo específico de código de patogenicidad (o no). Por ejemplo, si queremos identificar en nuestro juego de datos las variantes que afectan la respuesta a drogas (CLNSIG=6), podemos hacer:</p>
+<div class="sourceCode" id="cb250"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb250-1"><a href="epidemio.html#cb250-1" aria-hidden="true" tabindex="-1"></a>misnps.clinv[<span class="fu">grep</span>(<span class="st">&quot;6&quot;</span>,misnps.clinv<span class="sc">$</span>CLNSIG),]</span></code></pre></div>
+<pre><code>##             ID CHROM.x     POS.x REF.x ALT.x QUAL FILTER INFO          VAR_ID
+## 8   rs10246939       7 141672604     2     4 &lt;NA&gt;   &lt;NA&gt;   PR 7_141672604_T_C
+## 26  rs10509681      10  96798749     4     2 &lt;NA&gt;   &lt;NA&gt;   PR 10_96798749_T_C
+## 30   rs1051740       1 226019633     4     2 &lt;NA&gt;   &lt;NA&gt;   PR 1_226019633_T_C
+## 155    rs20455       6  39325078     1     3 &lt;NA&gt;   &lt;NA&gt;   PR  6_39325078_A_G
+## 176  rs2234922       1 226026406     1     3 &lt;NA&gt;   &lt;NA&gt;   PR 1_226026406_A_G
+## 371  rs7779029       7  80532112     4     2 &lt;NA&gt;   &lt;NA&gt;   PR  7_80532112_T_C
+##        GENE CHROM.y     POS.y REF.y ALT.y                CLNSIG
+## 8   TAS2R38       7 141672604     T     C                     6
+## 26   CYP2C8      10  96798749     T     C                     6
+## 30    EPHX1       1 226019633     T     C 255, 255, 255, 255, 6
+## 155    KIF6       6  39325078     A     G                  6, 6
+## 176   EPHX1       1 226026406     A     G                  2, 6
+## 371  SEMA3C       7  80532112     T     C                     6
+##                                                                                                                                                                                                                              CLNDBN
+## 8                                                                                                                                                                                                       Phenylthiocarbamide_tasting
+## 26                                                                                                                                                                                                  rosiglitazone_response_-_Dosage
+## 30  Lymphoproliferative_disorders\\x2c_susceptibility_to, Preeclampsia\\x2c_susceptibility_to, Emphysema\\x2c_susceptibility_to, Pulmonary_disease\\x2c_chronic_obstructive\\x2c_susceptibility_to, carbamazepine_response_-_Dosage
+## 155                                                                                                                                                               atorvastatin_response_-_Efficacy, pravastatin_response_-_Efficacy
+## 176                                                                                                                                                                 EPOXIDE_HYDROLASE_POLYMORPHISM, carbamazepine_response_-_Dosage
+## 371                                                                                                                                                                                              irinotecan_response_-_Toxicity/ADR
+##     pathogenic_incl_conflicts pathogenic_no_conflicts
+## 8                       FALSE                   FALSE
+## 26                      FALSE                   FALSE
+## 30                      FALSE                   FALSE
+## 155                     FALSE                   FALSE
+## 176                     FALSE                   FALSE
+## 371                     FALSE                   FALSE</code></pre>
+<p>Recuperar las variantes patogénicas debería ser tan sencillo, sin embargo, al existir un código “5” y otro “255” la técnica que usamos antes de agarrarlas con un <em>grep()</em> deja de funcionar. Una alternativa podría ser la siguiente:</p>
+<div class="sourceCode" id="cb252"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb252-1"><a href="epidemio.html#cb252-1" aria-hidden="true" tabindex="-1"></a>misnps.clinv[<span class="fu">which</span>(misnps.clinv<span class="sc">$</span>CLNSIG<span class="sc">==</span><span class="st">&quot;5&quot;</span>),]</span></code></pre></div>
+<pre><code>##            ID CHROM.x    POS.x REF.x ALT.x QUAL FILTER INFO          VAR_ID
+## 174 rs2228671      19 11210912     2     4 &lt;NA&gt;   &lt;NA&gt;   PR 19_11210912_C_A
+## 265   rs37369       5 35037115     2     4 &lt;NA&gt;   &lt;NA&gt;   PR  5_35037115_C_T
+##      GENE CHROM.y    POS.y REF.y ALT.y CLNSIG                        CLNDBN
+## 174  LDLR      19 11210912     C     A      5 Familial_hypercholesterolemia
+## 265 AGXT2       5 35037115     C     T      5 Beta-aminoisobutyric_aciduria
+##     pathogenic_incl_conflicts pathogenic_no_conflicts
+## 174                      TRUE                    TRUE
+## 265                      TRUE                    TRUE</code></pre>
+<p>Sin embargo, esta idea nos deja afuera las patogénica con otras CLNSIG compartidas. Una alternativa más eficiente es la siguiente</p>
+<div class="sourceCode" id="cb254"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb254-1"><a href="epidemio.html#cb254-1" aria-hidden="true" tabindex="-1"></a>misnps.clinv[<span class="fu">which</span>(<span class="fu">lapply</span>(<span class="fu">as.character</span>(misnps.clinv<span class="sc">$</span>CLNSIG),<span class="cf">function</span>(x) <span class="fu">sum</span>(<span class="fu">strsplit</span>(x,<span class="st">&quot;,&quot;</span>)[[<span class="dv">1</span>]]<span class="sc">==</span><span class="st">&quot;5&quot;</span>))<span class="sc">&gt;</span><span class="dv">0</span>),]</span></code></pre></div>
+<pre><code>##            ID CHROM.x    POS.x REF.x ALT.x QUAL FILTER INFO          VAR_ID
+## 174 rs2228671      19 11210912     2     4 &lt;NA&gt;   &lt;NA&gt;   PR 19_11210912_C_A
+## 265   rs37369       5 35037115     2     4 &lt;NA&gt;   &lt;NA&gt;   PR  5_35037115_C_T
+##      GENE CHROM.y    POS.y REF.y ALT.y CLNSIG                        CLNDBN
+## 174  LDLR      19 11210912     C     A      5 Familial_hypercholesterolemia
+## 265 AGXT2       5 35037115     C     T      5 Beta-aminoisobutyric_aciduria
+##     pathogenic_incl_conflicts pathogenic_no_conflicts
+## 174                      TRUE                    TRUE
+## 265                      TRUE                    TRUE</code></pre>
+<p>Más aún, podemos crear una función para seleccionar códigos que nos interesan y que no aparezcan lo que no nos interesan</p>
+<div class="sourceCode" id="cb256"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb256-1"><a href="epidemio.html#cb256-1" aria-hidden="true" tabindex="-1"></a>mifilt<span class="ot">&lt;-</span><span class="cf">function</span>(CLNSIG,yes,no) {<span class="fu">which</span>(<span class="fu">lapply</span>(<span class="fu">as.character</span>(CLNSIG),<span class="cf">function</span>(x) <span class="fu">sum</span>(<span class="fu">strsplit</span>(x,<span class="st">&quot;,&quot;</span>)[[<span class="dv">1</span>]]<span class="sc">%in%</span>yes))<span class="sc">&gt;</span><span class="dv">0</span> <span class="sc">&amp;</span> <span class="sc">!</span><span class="fu">lapply</span>(<span class="fu">as.character</span>(CLNSIG),<span class="cf">function</span>(x) <span class="fu">sum</span>(<span class="fu">strsplit</span>(x,<span class="st">&quot;,&quot;</span>)[[<span class="dv">1</span>]]<span class="sc">%in%</span>no))<span class="sc">&gt;</span><span class="dv">0</span>)}</span>
+<span id="cb256-2"><a href="epidemio.html#cb256-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb256-3"><a href="epidemio.html#cb256-3" aria-hidden="true" tabindex="-1"></a>(pasan.filtro<span class="ot">&lt;-</span><span class="fu">mifilt</span>(<span class="at">CLNSIG=</span>misnps.clinv<span class="sc">$</span>CLNSIG,<span class="at">yes=</span><span class="fu">c</span>(<span class="st">&quot;5&quot;</span>),<span class="at">no=</span><span class="fu">c</span>(<span class="st">&quot;255&quot;</span>)))</span></code></pre></div>
+<pre><code>## [1] 174 265</code></pre>
+<div class="sourceCode" id="cb258"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb258-1"><a href="epidemio.html#cb258-1" aria-hidden="true" tabindex="-1"></a>(misnps.clinv<span class="fl">.5</span><span class="ot">&lt;-</span>misnps.clinv[pasan.filtro,])</span></code></pre></div>
+<pre><code>##            ID CHROM.x    POS.x REF.x ALT.x QUAL FILTER INFO          VAR_ID
+## 174 rs2228671      19 11210912     2     4 &lt;NA&gt;   &lt;NA&gt;   PR 19_11210912_C_A
+## 265   rs37369       5 35037115     2     4 &lt;NA&gt;   &lt;NA&gt;   PR  5_35037115_C_T
+##      GENE CHROM.y    POS.y REF.y ALT.y CLNSIG                        CLNDBN
+## 174  LDLR      19 11210912     C     A      5 Familial_hypercholesterolemia
+## 265 AGXT2       5 35037115     C     T      5 Beta-aminoisobutyric_aciduria
+##     pathogenic_incl_conflicts pathogenic_no_conflicts
+## 174                      TRUE                    TRUE
+## 265                      TRUE                    TRUE</code></pre>
+<p><strong>¿Cuáles son las enfermedades asociadas a los SNPs presentes en nuestro juego de datos de poblaciones?</strong></p>
+<p>Por ejemplo, si ahora queremos quedarnos con las variantes no-patogénicas y probablemente-no-patogénicas, utilizando nuestra función podemos hacer:</p>
+<div class="sourceCode" id="cb260"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb260-1"><a href="epidemio.html#cb260-1" aria-hidden="true" tabindex="-1"></a>(pasan.filtro<span class="ot">&lt;-</span><span class="fu">mifilt</span>(<span class="at">CLNSIG=</span>misnps.clinv<span class="sc">$</span>CLNSIG,<span class="at">yes=</span><span class="fu">c</span>(<span class="st">&quot;2&quot;</span>,<span class="st">&quot;3&quot;</span>),<span class="at">no=</span><span class="fu">c</span>(<span class="st">&quot;255&quot;</span>)))</span></code></pre></div>
+<pre><code>##   [1]   2   7  12  14  17  21  24  25  32  34  35  38  42  43  44  46  48  49
+##  [19]  50  51  52  54  57  60  64  66  67  70  73  74  76  79  80  83  86  87
+##  [37]  88  93  94  95  99 100 103 107 109 114 115 116 120 121 122 124 125 128
+##  [55] 129 133 135 137 144 145 146 148 150 151 153 154 157 163 165 168 169 179
+##  [73] 180 182 183 184 185 186 189 191 193 194 195 196 197 198 202 206 207 211
+##  [91] 213 217 222 223 225 226 227 228 229 230 231 233 236 239 241 242 243 247
+## [109] 250 253 254 255 258 259 261 266 267 270 271 274 275 276 278 280 281 283
+## [127] 284 285 290 291 293 295 297 299 301 306 309 315 317 318 319 320 323 326
+## [145] 328 329 330 332 333 336 337 340 346 347 348 349 350 354 355 356 359 360
+## [163] 361 363 364 365 366 367 368 370 372 373 374 376 378 383 384 387 389 393
+## [181] 397 398 399 400 401</code></pre>
+<div class="sourceCode" id="cb262"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb262-1"><a href="epidemio.html#cb262-1" aria-hidden="true" tabindex="-1"></a>misnps.clinv<span class="fl">.23</span><span class="ot">&lt;-</span>misnps.clinv[pasan.filtro,]</span>
+<span id="cb262-2"><a href="epidemio.html#cb262-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(misnps.clinv<span class="fl">.23</span>)</span></code></pre></div>
+<pre><code>##            ID CHROM.x     POS.x REF.x ALT.x QUAL FILTER INFO          VAR_ID
+## 2  rs10063294       5  35877505     3     1 &lt;NA&gt;   &lt;NA&gt;   PR  5_35877505_G_A
+## 7   rs1014867       4 126412891     2     4 &lt;NA&gt;   &lt;NA&gt;   PR 4_126412891_C_T
+## 12  rs1041951      18  55240505     2     4 &lt;NA&gt;   &lt;NA&gt;   PR 18_55240505_C_T
+## 14  rs1043828       5 110464008     4     2 &lt;NA&gt;   &lt;NA&gt;   PR 5_110464008_T_C
+## 17  rs1048006      18  57098391     1     3 &lt;NA&gt;   &lt;NA&gt;   PR 18_57098391_G_A
+## 21  rs1049600       4  17488351     4     2 &lt;NA&gt;   &lt;NA&gt;   PR  4_17488351_T_C
+##     GENE CHROM.y     POS.y REF.y ALT.y CLNSIG
+## 2   IL7R       5  35877505     G     A      2
+## 7   FAT4       4 126412891     C     T      2
+## 12  FECH      18  55240505     C     T      2
+## 14 WDR36       5 110464008     T     C      2
+## 17 CCBE1      18  57098391     G     A      2
+## 21  QDPR       4  17488351     T     C      2
+##                                           CLNDBN pathogenic_incl_conflicts
+## 2              Severe_Combined_Immune_Deficiency                     FALSE
+## 7                                  not_specified                     FALSE
+## 12                 Erythropoietic_protoporphyria                     FALSE
+## 14                   Primary_open_angle_glaucoma                     FALSE
+## 17 Hennekam_lymphangiectasia-lymphedema_syndrome                     FALSE
+## 21           BH4-Deficient_Hyperphenylalaninemia                     FALSE
+##    pathogenic_no_conflicts
+## 2                    FALSE
+## 7                    FALSE
+## 12                   FALSE
+## 14                   FALSE
+## 17                   FALSE
+## 21                   FALSE</code></pre>
+<div class="sourceCode" id="cb264"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb264-1"><a href="epidemio.html#cb264-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(<span class="fu">as.character</span>(misnps.clinv<span class="fl">.23</span><span class="sc">$</span>CLNSIG))</span></code></pre></div>
+<pre><code>## 
+##   2   3 
+## 141  44</code></pre>
+<p>Veamos si ahora podemos recuperar la información de los SNPs asociados a estas enfermedades en nuestro juego de datos y analizar cómo son las frecuencias en las diferentes poblaciones de nuestra base. La idea es sencilla: recuperar los identificadores de SNPs de la tabla “misnps.clinv.5” y luego subsetear la tabla de genotipos por estos identificadores.</p>
+<div class="sourceCode" id="cb266"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb266-1"><a href="epidemio.html#cb266-1" aria-hidden="true" tabindex="-1"></a>ngenot.estan.pato<span class="ot">&lt;-</span>ngenot.estan[misnps.clinv<span class="fl">.5</span><span class="sc">$</span>ID,]</span>
+<span id="cb266-2"><a href="epidemio.html#cb266-2" aria-hidden="true" tabindex="-1"></a>ngenot.estan.pato[,<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>]</span></code></pre></div>
+<pre><code>##           HGDP00479 HGDP00985 HGDP01094 HGDP00982 HGDP00911 HGDP01202 HGDP00461
+## rs2228671         0         0         1         0         0         0         0
+## rs37369           0         1         2         1         1         1         1
+##           HGDP00986 HGDP00449 HGDP00912
+## rs2228671         0         0         0
+## rs37369           1         1         1</code></pre>
+<p>Ahora, vamos a calcular la frecuencia por población, para cada uno de los dos SNPs. Como solo se trata de dos SNPs, vamos a tratar cada uno en forma individual, lo que resulta muy fácil:</p>
+<div class="sourceCode" id="cb268"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb268-1"><a href="epidemio.html#cb268-1" aria-hidden="true" tabindex="-1"></a>ag.rs2228671<span class="ot">&lt;-</span><span class="fu">aggregate</span>(ngenot.estan.pato[<span class="dv">1</span>,],<span class="at">by=</span><span class="fu">list</span>(<span class="st">&quot;Population&quot;</span><span class="ot">=</span>tb<span class="sc">$</span>Population.name),<span class="cf">function</span>(x)<span class="fu">sum</span>(x,<span class="at">na.rm=</span><span class="cn">TRUE</span>)<span class="sc">/</span>(<span class="dv">2</span><span class="sc">*</span><span class="fu">length</span>(x)))</span>
+<span id="cb268-2"><a href="epidemio.html#cb268-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb268-3"><a href="epidemio.html#cb268-3" aria-hidden="true" tabindex="-1"></a>ag.rs37369<span class="ot">&lt;-</span><span class="fu">aggregate</span>(ngenot.estan.pato[<span class="dv">2</span>,],<span class="at">by=</span><span class="fu">list</span>(<span class="st">&quot;Population&quot;</span><span class="ot">=</span>tb<span class="sc">$</span>Population.name),<span class="cf">function</span>(x)<span class="fu">sum</span>(x,<span class="at">na.rm=</span><span class="cn">TRUE</span>)<span class="sc">/</span>(<span class="dv">2</span><span class="sc">*</span><span class="fu">length</span>(x)))</span>
+<span id="cb268-4"><a href="epidemio.html#cb268-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb268-5"><a href="epidemio.html#cb268-5" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(ag.rs2228671<span class="sc">$</span>x,<span class="dv">20</span>,<span class="at">col=</span><span class="st">&quot;darkred&quot;</span>,<span class="at">xlab=</span><span class="st">&quot;frecuencia rs2228671&quot;</span>,<span class="at">ylab=</span><span class="st">&quot;Frecuencia&quot;</span>,<span class="at">main=</span><span class="st">&quot;&quot;</span>)</span></code></pre></div>
+<p><img src="HWEA2022_files/figure-html/chunk860-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb269"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb269-1"><a href="epidemio.html#cb269-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(ag.rs37369<span class="sc">$</span>x,<span class="dv">20</span>,<span class="at">col=</span><span class="st">&quot;darkblue&quot;</span>,<span class="at">xlab=</span><span class="st">&quot;frecuencia rs2228671&quot;</span>,<span class="at">ylab=</span><span class="st">&quot;Frecuencia&quot;</span>,<span class="at">main=</span><span class="st">&quot;&quot;</span>)</span></code></pre></div>
+<p><img src="HWEA2022_files/figure-html/chunk860-2.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Veamos ahora si podemos ordenar estas tablas por frecuencia, para entender que poblaciones son las que tienen en mayor frecuencia cada una de las variantes.</p>
+<div class="sourceCode" id="cb270"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb270-1"><a href="epidemio.html#cb270-1" aria-hidden="true" tabindex="-1"></a>ag.rs2228671.o<span class="ot">&lt;-</span>ag.rs2228671[<span class="fu">order</span>(ag.rs2228671<span class="sc">$</span>x, <span class="at">decreasing =</span> <span class="cn">TRUE</span>),]</span>
+<span id="cb270-2"><a href="epidemio.html#cb270-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(ag.rs2228671.o)</span></code></pre></div>
+<pre><code>##           Population         x
+## 50 Mozabite,Mozabite 0.5000000
+## 10         Bedouin B 0.2500000
+## 66         Sardinian 0.2037037
+## 1             Adygei 0.1764706
+## 8             Basque 0.1458333
+## 49          Mozabite 0.1250000</code></pre>
+<div class="sourceCode" id="cb272"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb272-1"><a href="epidemio.html#cb272-1" aria-hidden="true" tabindex="-1"></a>ag.rs37369.o<span class="ot">&lt;-</span>ag.rs37369[<span class="fu">order</span>(ag.rs37369<span class="sc">$</span>x, <span class="at">decreasing =</span> <span class="cn">TRUE</span>),]</span>
+<span id="cb272-2"><a href="epidemio.html#cb272-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(ag.rs37369.o)</span></code></pre></div>
+<pre><code>##            Population         x
+## 33 Ju|&#39;hoan North,San 1.0000000
+## 42         Mayan,Maya 1.0000000
+## 63               Pima 0.7916667
+## 75               Xibo 0.7777778
+## 4        Bantu Herero 0.7500000
+## 41               Maya 0.7333333</code></pre>
+<p><strong>¿Qué comentarios te merecen estos resultados? ¿Pueden estas variantes ser muy patogénicas con las frecuencias que observamos? ¿A que se pueden deber las frecuencias extremas observadas en algunas poblaciones? ¿El valor de frecuencia relativa=1 significa que dicha variante está fijada en la población correspondiente?</strong></p>
+<p><strong>¿Qué comentarios te merecen las preguntas anteriores a la luz de los siguientes resultados?</strong></p>
+<div class="sourceCode" id="cb274"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb274-1"><a href="epidemio.html#cb274-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>(<span class="fu">table</span>(tb<span class="sc">$</span>Population.name))</span></code></pre></div>
+<pre><code>## 
+##     Cambodian,Cambodian       Japanese,Japanese      Ju|&#39;hoan North,San 
+##                       1                       1                       1 
+##             Luhya,Luhya       Mozabite,Mozabite            Papuan Sepik 
+##                       1                       1                       1 
+##           Pathan,Pathan            Bantu Herero            Bantu Tswana 
+##                       1                       2                       2 
+##               Bedouin B                 Bergamo          Ju|&#39;hoan North 
+##                       2                       2                       2 
+##              Mayan,Maya             Mbuti,Mbuti                 Mongola 
+##                       2                       2                       2 
+##                 Piapoco                     San                  Papuan 
+##                       2                       2                       3 
+##      Bantu South Africa               Colombian               Mongolian 
+##                       4                       5                       5 
+## Papuan,Papuan Highlands     Papuan,Papuan Sepik                  Hezhen 
+##                       6                       6                       8 
+##                    Lahu                    Naxi                   Surui 
+##                       8                       8                       8 
+##                  Tuscan             Bantu Kenya         Bergamo Italian 
+##                       8                       9                       9 
+##               Cambodian                     Dai                    Daur 
+##                       9                       9                       9 
+##                  Oroqen                    Xibo            Bougainville 
+##                       9                       9                      10 
+##                    Miao            Northern Han                     She 
+##                      10                      10                      10 
+##                      Tu                   Tujia                   Uygur 
+##                      10                      10                      10 
+##                      Yi               Karitiana                   Mbuti 
+##                      10                      11                      11 
+##                    Pima                  Hazara                    Maya 
+##                      12                      15                      15 
+##                Orcadian                  Adygei                 Makrani 
+##                      15                      17                      20 
+##                 Balochi                   Biaka                Mandenka 
+##                      21                      21                      21 
+##                  Pathan                   Yakut                  Kalash 
+##                      21                      21                      22 
+##                  Sindhi                  Brahui                  Basque 
+##                      22                      23                      24 
+##                 Burusho                Mozabite                 Russian 
+##                      24                      24                      25 
+##                  French               Sardinian                     Han 
+##                      27                      27                      33 
+##     African Ancestry SW                   Druze             Palestinian 
+##                      34                      42                      42 
+##                 Bedouin        Mexican Ancestry                   Luhya 
+##                      43                      49                      72 
+##                Gujarati             Han Chinese                 Toscani 
+##                      82                      83                      88 
+##                    CEPH                Japanese                  Yoruba 
+##                     108                     112                     125</code></pre>
+<p>Finalmente, otra alternativa interesante para la búsqueda de información sobre variantes es el paquete <strong>VarfromPDB</strong> que, sin embargo, nosotros no vamos a utilizar porque demora mucho en darnos una respuesta. El siguiente código (que no vamos a correr) es un ejemplo.</p>
+<div class="sourceCode" id="cb276"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb276-1"><a href="epidemio.html#cb276-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="cn">FALSE</span>){</span>
+<span id="cb276-2"><a href="epidemio.html#cb276-2" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages(&quot;VarfromPDB&quot;)</span></span>
+<span id="cb276-3"><a href="epidemio.html#cb276-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;VarfromPDB&quot;</span>)</span>
+<span id="cb276-4"><a href="epidemio.html#cb276-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb276-5"><a href="epidemio.html#cb276-5" aria-hidden="true" tabindex="-1"></a>clinvar.phenotype <span class="ot">=</span> <span class="fu">extract_clinvar</span>(<span class="at">keyword=</span><span class="st">&quot;retinoblastoma&quot;</span>)</span>
+<span id="cb276-6"><a href="epidemio.html#cb276-6" aria-hidden="true" tabindex="-1"></a>genes.clinvar <span class="ot">=</span> clinvar.phenotype[[<span class="dv">1</span>]]</span>
+<span id="cb276-7"><a href="epidemio.html#cb276-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">dim</span>(genes.clinvar))</span>
+<span id="cb276-8"><a href="epidemio.html#cb276-8" aria-hidden="true" tabindex="-1"></a>variants.clinvar <span class="ot">=</span> clinvar.phenotype[[<span class="dv">2</span>]]</span>
+<span id="cb276-9"><a href="epidemio.html#cb276-9" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">dim</span>(variants.clinvar))</span>
+<span id="cb276-10"><a href="epidemio.html#cb276-10" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<hr />
+</div>
+<div id="estudios-de-asociación-de-genoma-completo-gwas" class="section level2 hasAnchor" number="2.5">
+<h2><span class="header-section-number">2.5</span> Estudios de Asociación de Genoma Completo (GWAS)<a href="epidemio.html#estudios-de-asociación-de-genoma-completo-gwas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>La información genómica nos permite realizar muchos estudios poblacionales. En particular, cuando contamos con información fenotípica de cada uno de los individuos, surge clara la idea de intentar buscar algún tipo de asociación entre variantes del genoma y los fenotipos. Estos estudios se conocen como Estudios de Asociación de Genoma Completo (<strong>GWAS</strong>). Los fenotipos pueden referirse a cualquier característica de los individuos que se aprecie directamente o aún a partir de otro tipo de análisis (por ejemplo, concentración de moléculas ynmetabolitos en sangre) aunque en muchos casos se trata de enfermedades. Dependiendo de si se trata de características de expresión continua o discreta existen una serie de alternativas para definir la significación estadística de las posibles asociaciones.</p>
+<p>El principal problema, desde el punto de vista estadístico se encuentra con replicabilidad de los resultados. Aún luego de realizar las correcciones por múltiples ensayos, suele ser necesaria la validación con un juego de datos diferentes, aunque en este caso el juego de marcadores a ensayar es también mucho menor (los que pasan un determinado valor umbral en la primera etapa).</p>
+<p>Un segundo problema tiene relación con la estructuración genética de la población. Si una determinada enfermedad presenta diferencias de prevalencia en diferentes poblaciones, todos los marcadores que sean distintivos de población (es decir, que se asocien de manera particular con las poblaciones) tenderán a estar significativamente asociados con la enfermedad, pese a que desde el punto de vista causal no tienen ninguna relación.</p>
+<p>La figura <a href="epidemio.html#fig:esqGWAS">2.3</a> representa los distintos pasos que son necesarios para encontrar asociación de marcadores con fenotipo a partir de un estudio del tipo <strong>GWAS</strong></p>
+<p><br />
+</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:esqGWAS"></span>
+<img src="figuras/esquemaGWAS.png" alt="Esquematización de los pasos en un estudio GWAS (figura del artículo de Uffelmann et al., 2021." width="80%" />
+<p class="caption">
+Figura 2.3: Esquematización de los pasos en un estudio GWAS (figura del artículo de Uffelmann et al., 2021.
+</p>
+</div>
+<p>De acuerdo con el trabajo de Uffelmann et al., 2021 y en particular con esta figura, los pasos se pueden describir brevemente como (extraído en forma textual, traducción nuestra):</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Los datos pueden recogerse a partir de cohortes de estudio o puede utilizarse la información genética y fenotípica disponible en biobancos o depósitos. Los factores de confusión (es decir, aquellas otras fuentes de variación ocultas pero que pueden incidir en los resultados) deben tenerse en cuenta cuidadosamente y las estrategias de reclutamiento no deben introducir sesgos, como el sesgo del colisionador (cuando una exposición y un resultado -o los factores que los causan- influyen cada uno en una tercera variable común y esa variable o <strong>colisionador</strong> se controla mediante el diseño o el análisis).</p></li>
+<li><p>Los datos genotípicos pueden recogerse utilizando microarrays para capturar variantes comunes, o métodos de secuenciación de próxima generación para la secuenciación del genoma completo (WGS) o la secuenciación del exoma completo (WES).</p></li>
+<li><p>El control de calidad incluye pasos en la etapa de laboratorio húmedo, como la “llamada de genotipos” y los cambios en el ADN, y etapas de laboratorio seco en la “llamada de genotipos”, como la eliminación de polimorfismos de un solo nucleótido (SNP) e individuos con problemas, la detección de estratos de población (estructuración) en la muestra y el análisis de componentes principales.</p></li>
+<li><p>Los datos genotípicos pueden ser clasificados por fases, y los genotipos no tipificados pueden ser imputados utilizando información de poblaciones de referencia emparejadas de repositorios como el <strong>Proyecto 1000 Genomas</strong> o <strong>TopMed</strong>. En este ejemplo, los genotipos de SNP1 y SNP3 se imputan basándose en los genotipos directamente ensayados de otros SNP.</p></li>
+<li><p>Las pruebas de asociación genética se ejecutan para cada variante genética, utilizando un modelo apropiado (por ejemplo, regresión aditiva, no aditiva, lineal o logística). Se corrigen los factores de confusión, incluidos los estratos de la población, y se controlan las pruebas múltiples. Los resultados se inspeccionan en busca de patrones inusuales y se generan estadísticas de resumen.</p></li>
+<li><p>Los resultados de múltiples cohortes más pequeñas se combinan utilizando conductos estadísticos estandarizados.</p></li>
+<li><p>Los resultados pueden replicarse utilizando la replicación interna o la replicación externa en una cohorte independiente. Para la replicación externa, la cohorte independiente debe estar emparejada ancestralmente (es decir, tener el mismo perfil ancestral) y no compartir individuos o miembros de la familia con la cohorte de descubrimiento.</p></li>
+<li><p>Análisis in silico de estudios de asociación de todo el genoma (GWAS), utilizando información de recursos externos. Esto puede incluir mapeo fino in silico, mapeo de SNP a genes, mapeo de genes a funciones, análisis de vías, análisis de correlación genética, aleatorización mendeliana y predicción de riesgo poligénico. Después de los GWAS, las hipótesis funcionales pueden probarse utilizando técnicas experimentales como CRISPR o ensayos reporteros masivamente paralelos, o los resultados pueden validarse en un modelo de rasgo/enfermedad humano.</p></li>
+</ol>
+<!-- \ -->
+<!-- ## Ejercicios {#ejercicios-2 .unnumbered} -->
+<!-- #### Ejercicio 2.1{-} -->
+<!-- En la especie *Antirrhinum majus*, conocida vulgarmente como "boca de -->
+<!-- dragón", dos alelos en un gen que determina el color de las flores -->
+<!-- (**R** rojo y **W** blanco), cuando se encuentran en estado homocigoto -->
+<!-- producen (respectivamente) flores rojas y blancas, pero cuando se -->
+<!-- encuentran en estado heterocigoto producen flores rosadas; esto permite -->
+<!-- identificar claramente a los heterocigotos. En una población natural, en -->
+<!-- un área relativamente pequeña se contaron 122 flores rojas, 127 rosadas -->
+<!-- y 33 blancas. ¿Cuáles son las frecuencias estimadas de los alelos **R** -->
+<!-- y **W**? ¿Cuáles son las frecuencias esperadas para los distintos -->
+<!-- genotipos si la población estuviese en equilibrio de Hardy-Weinberg? -->
+<!-- ¿Podemos afirmar (estadísticamente) que la población no se encuentra en -->
+<!-- equilibrio de Hardy-Weinberg? -->
+<!-- ***Solución*** -->
+<!-- \begin{equation*} -->
+<!-- \begin{split} -->
+<!-- fr(R)=\frac{(2*fr(RR)+fr(RW))}{2*(fr(RR)+fr(RW)+fr(WW))}=\frac{2*122+127}{2*(122+127+33)}=\frac{371}{564}=0,6578014\\  -->
+<!-- fr(W)=1-0,6578014=0,3421986 & \\ -->
+<!-- E(fr(RR))_{HW}=Np^2=282*(0,6578014)^2=0.4327027*282=122,0222 \sim 122\\ -->
+<!-- E(fr(RW))_{HW}=2Npq=564*(0,6578014*0,3421986)=126,9557 \sim 127 \\ -->
+<!-- E(fr(WW))_{HW}=Nq^2=282*(0,3421986)^2=33,02217 \sim 33 -->
+<!-- \end{split} -->
+<!-- \end{equation*} -->
+<!-- El ajuste, más allá del redondeo, es casi perfecto, por lo que dado el -->
+<!-- número relativamente bajo de individuos y los pocos grados de libertad -->
+<!-- implicados (3 genotipos - 2 alelos = 1 grado de libertad) hacen -->
+<!-- innecesario el test estadístico más usual (test de $\chi^2$), pero el -->
+<!-- lector puede verificarlo fácilmente. -->
+<!-- #### Ejercicio 2.2{-} -->
+<!-- Estimaciones obtenidas en un trabajo previo realizado en una raza de -->
+<!-- gallinas en una población de otro país, la frecuencia del alelo **R**, -->
+<!-- en un locus autosomal con dos alelos (el otro es **r**) en una especie -->
+<!-- diploide es de $p=0,20$ (se desconoce el error estándar de los -->
+<!-- estimados, pero se asume muy bajo porque es el resultado de genotipar -->
+<!-- miles de individuos). Para determinar si la frecuencia del alelo **R** -->
+<!-- en nuestra población se realiza el genotipado de 20 animales y se -->
+<!-- observa un conteo de 5 alelos **R**. Calcular la probabilidad de -->
+<!-- observar exactamente ese conteo y luego calcular la de uno igual o menor -->
+<!-- si nuestra población tuviese las mismas frecuencias que la población del -->
+<!-- trabajo previo. -->
+<!-- ***Solución*** -->
+<!-- La probabilidad de obtener un conteo de 5 alelos **R** es la -->
+<!-- [fdp]{acronym-label="fdp" acronym-form="singular+short"} binomial, o sea -->
+<!-- $$\begin{aligned} -->
+<!-- Pr(X=5)={40\choose 5} 0,2^{5} (1-0,2)^{40-5}={40\choose 5} 0,2^{5} (0,8)^{35}=0,08541432 \sim 8,54\%\end{aligned}$$ -->
+<!-- La probabilidad de obtener un conteo de 5 o menos alelos **R** es la -->
+<!-- [fda]{acronym-label="fda" acronym-form="singular+short"} binomial, o -->
+<!-- sea, la suma de las probabilidades de obtener conteos de 0, 1, 2, 3, 4 y -->
+<!-- 5 $$\begin{aligned} -->
+<!-- Pr(X \leq 5)=\sum_{x=0}^{5} {40\choose x} p^x (1-p)^{40-x}=0,1613288 \sim 16,13\%\end{aligned}$$ -->
+<!-- #### Ejercicio 2.3{-} -->
+<!-- En un hospital se determinó que de 1000 pacientes, 350 eran del grupo -->
+<!-- sanguíneo A, 280 del grupo O, 180 del grupo B y 190 del grupo AB. -->
+<!-- Utilizando los estimadores que propuso @pmid6598211 estimar las -->
+<!-- frecuencias de los alelos $I^A$, $I^B$ e $i$, así como el número -->
+<!-- esperado de los distintos fenotipos si la población estuviese en -->
+<!-- equilibrio de Hardy-Weinberg. -->
+<!-- ***Solución*** -->
+<!-- \begin{equation*} -->
+<!-- \begin{split} -->
+<!-- \hat{p}=\frac{[(1/2)AB+A+O-\sqrt{O(A+O)}]}{T}=\frac{((190/2)+350+280-\sqrt{(280*(350+280))})}{1000} \sim 0,3050 \\ -->
+<!-- \hat{q}=\frac{[(1/2)AB+B+O-\sqrt{O(B+O)}]}{T}=\frac{((190/2)+180+280-\sqrt{(280*(180+280))})}{1000} \sim 0,1961 \\ -->
+<!-- \hat{r}=1-\hat{p}-\hat{q}=1-0,3050-0,2022=0,4989 -->
+<!-- \end{split} -->
+<!-- \end{equation*} -->
+<!-- De acuerdo a las frecuencias estimadas previamente, el número esperado -->
+<!-- de cada fenotipo sería -->
+<!-- \begin{equation*} -->
+<!-- \begin{split} -->
+<!-- E(A)=(p^2+2pr)T=(0,3050^2+2*0,3050*0,4989)*1000 \sim 397\\ -->
+<!-- E(B)=(q^2+2qr)T=(0,1961^2+2*0,1961*0,4989)*1000 \sim 234\\ -->
+<!-- E(AB)=2pqT=2*0,3050*0,1961*1000 \sim 120\\ -->
+<!-- E(O)=r^2T=0,4989^2*1000=483,6051 \sim 249, -->
+<!-- \end{split} -->
+<!-- \end{equation*} -->
+<!-- Claramente, hay una diferencia importante entre lo observado y lo -->
+<!-- predicho, por lo que la validez de nuestras estimaciones es nula -->
+<!-- ($\chi^2$=27,9, $gl=3$, p-value= 3,811e-06). -->
+<!-- #### Ejercicio 2.7{-} -->
+<!-- En muchos casos las ecuaciones que derivamos se simplifican enormemente debido a la restricción $p+q=1$. Demostrar que las siguientes relaciones son válidas (adaptado de @HartlClark2007) -->
+<!-- \begin{equation} -->
+<!-- p^2-q^2=p-q \\ -->
+<!-- p^2+pq=p \\ -->
+<!-- p-q=1-2q \\ -->
+<!-- p^2+q^2=1-2pq \\ -->
+<!-- (p-q)^2=1-4pq \\ -->
+<!-- \end{equation} -->
+<!-- ***Solución*** -->
+<!-- Haciendo uso de que $p+q=1$, por lo que también $(p+q)^2=p^2+2pq+q^2=1$ (ya que lo que está dentro del paréntesis vale $1$ y $1^2=1$), tenemos que  -->
+<!-- \begin{equation} -->
+<!-- p^2-q^2=(p+q)(p-q)=(1)(p-q)=p-q \\ -->
+<!-- p^2+pq=p(p+q)=p(1)=p \\ -->
+<!-- p-q=(1-q)-q=1-q-q=1-2q \\ -->
+<!-- p^2+q^2=1-2pq \Leftrightarrow p^2+q^2+2pq=1 \Leftrightarrow (p+q)^2=1 \Leftrightarrow 1^2=1\\ -->
+<!-- (p-q)^2=p^2-2pq+q^2=p^2-2pq+q^2+2pq-2pq=p^2+2pq+q^2-2pq-2pq=(p+q)^2-4pq=1-4pq -->
+<!-- \end{equation} -->
+<!-- \ -->
+<!-- ---- -->
+<!-- 1. **Familial Aggregation studies**: Is there a genetic component to the disease, and what are the relative contributions of genes and environment? -->
+<!-- 2. **Segregation studies**: What is the pattern of inheritance of the disease (recessive or dominant)? -->
+<!-- 3. **Linkage studies**: On which part of which chromosome is the disease gene located.? -->
+<!-- 4. **Association studies**: Which allele of which gene is associated with the disease? -->
+<!-- 1. **Familial Aggregation studies** -->
+<!-- **Twin Studies** -->
+<!-- The aim of this approach is to separate the environmental effects (Nurture) from genetic effects -->
+<!-- (Nature). The ideal Twin Methodology consists of identifying pairs of biological twins through -->
+<!-- affected members, and contrasting the Concordance Rates of Monozygotic and Identical (MZ) twins -->
+<!-- and Dizygotic or Fraternal (DZ) twins. If it can be assumed that MZ and DZ twins share environmental -->
+<!-- factors to a comparably similar degree (Nurture) but differ in their genetic similarity (Nature), then this -->
+<!-- comparison may allow the estimation of heritability – that is, the proportion of the variance on the -->
+<!-- liability to diseases owing to common genetic factors, and the proportion owing a shared environment. -->
+<!-- Variations of the this twin design may include comparisons of biological twins reared apart and twin -->
+<!-- family studies – to shed some light on the relative contributions of Nature vs. Nurture! Recent data -->
+<!-- seem to show that, in the general population, Nurture plays a somewhat stronger role Nature, given that -->
+<!-- all other factors being the same or comparable! -->
+<!-- **Adoption Studies** -->
+<!-- Similar to epidemiologic investigations of biological twins reared separately, Adoption Studies is -->
+<!-- another approach to contrast the effects of nurture (environmental alone) and nature (genetic alone) by -->
+<!-- comparing case subjects who have different ancestry but share the same environment. For example, a -->
+<!-- review of the literature of breast cancer cases has yielded no adoption cases. However, in a study of the -->
+<!-- relatives of some 34 adoptees with schizophrenia and 34 control adoptees, it was found that: -->
+<!-- • a 5% risk (14 cases/275 cases) appeared among their biological relatives -->
+<!-- • a 0.4% risk (1 case/253 cases) -->
+<!-- • No cases among the adoptive relatives of either group -->
+<!-- **Inbreeding Studies** -->
+<!-- Since the children of closely-related, or consanguineous, couples are likely to carry 2 copies of the -->
+<!-- same allele, and thus become at increased risk of diseases of recessive genes – those diseases for which -->
+<!-- 2 mutant alleles are necessary. Thus, inbreeding studies may be carried out as cohort studies or casecontrol -->
+<!-- studies – in either case, treating the exposure as proportional to the degree of inbreeding (such -->
+<!-- as Wright’s Coefficient of InbreedingWCI (the probability of carrying 2 copies of the same allele from -->
+<!-- a common ancestor. -->
+<!-- **Randomization Tests** -->
+<!-- ---- -->
+
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div class="csl-entry">
+Castle, W. E. 1903. <span>“<span class="nocase"><span>T</span>he laws of <span>G</span>alton and <span>M</span>endel and some laws governing race improvement</span>.”</span> <em>Proceedings of the American Academy of Arts and Sciences</em> 35 (8): 233–42.
+</div>
+<div class="csl-entry">
+Hardy, G. H. 1908. <span>“<span><span>M</span><span>E</span><span>N</span><span>D</span><span>E</span><span>L</span><span>I</span><span>A</span><span>N</span> <span>P</span><span>R</span><span>O</span><span>P</span><span>O</span><span>R</span><span>T</span><span>I</span><span>O</span><span>N</span><span>S</span> <span>I</span><span>N</span> <span>A</span> <span>M</span><span>I</span><span>X</span><span>E</span><span>D</span> <span>P</span><span>O</span><span>P</span><span>U</span><span>L</span><span>A</span><span>T</span><span>I</span><span>O</span><span>N</span></span>.”</span> <em>Science</em> 28 (706): 49–50.
+</div>
+<div class="csl-entry">
+Hartl, Daniel L, and Andrew G Clark. 2007. <em>Principles of Population Genetics</em>. 4th. ed. Sinauer.
+</div>
+<div class="csl-entry">
+Holsinger, K. E., and B. S. Weir. 2009. <span>“<span class="nocase"><span>G</span>enetics in geographically structured populations: defining, estimating and interpreting <span>F</span>(<span>S</span><span>T</span>)</span>.”</span> <em>Nat Rev Genet</em> 10 (9): 639–50.
+</div>
+<div class="csl-entry">
+Loáisiga, C. H., O. Rocha, A. K. Brantestam, B. Salomon, and A. Merker. 2012. <span>“Genetic Diversity and Gene Flow in Six Accessions of Meso-America Teosintes.”</span> <em>Genet Resour Crop Evol</em> 59: 95–111.
+</div>
+<div class="csl-entry">
+Rosenberg, N. A., and J. T. Kang. 2015. <span>“<span class="nocase"><span>G</span>enetic <span>D</span>iversity and <span>S</span>ocietally <span>I</span>mportant <span>D</span>isparities</span>.”</span> <em>Genetics</em> 201 (1): 1–12.
+</div>
+<div class="csl-entry">
+Vries, H. de. 1900. <span>“<span class="nocase"><span>S</span>ur la loi de disjonction des Hybrides</span>.”</span> <em>Comptes Rendus de l‘Acad<span>é</span>mie Des Sciences</em> 130 (-): 845–47.
+</div>
+<div class="csl-entry">
+Weinberg, W. 1908. <span>“<span class="nocase"><span>Ü</span>ber den Nachweis der Vererbung beim Menschen</span>.”</span> <em>Jahreshefte Des Vereins f<span>ü</span>r Vaterl<span>ä</span>ndische Naturkunde in W<span>ü</span>rttemberg.</em> 64: 369–82.
+</div>
+<div class="csl-entry">
+Wright, S. 1943. <span>“<span class="nocase"><span>G</span>enetics <span>I</span>solation by <span>D</span>istance</span>.”</span> <em>Genetics</em> 28 (2): 114–38.
+</div>
+<div class="csl-entry">
+WRIGHT, S. 1951. <span>“<span class="nocase"><span>A</span>nn <span>E</span>ugen<span>T</span>he genetical structure of populations</span>.”</span> <em>Ann Eugen</em> 15 (4): 323–54.
+</div>
+<div class="csl-entry">
+Wright, Sewall. 1978. <em>Evolution and the Genetics of Populations</em>. Chicago Press.
+</div>
+<div class="csl-entry">
+Yasuda, N. 1984. <span>“<span class="nocase"><span>A</span> note on gene frequency estimation in the <span>A</span><span>B</span><span>O</span> and <span>A</span><span>B</span><span>O</span>-like system</span>.”</span> <em>Jinrui Idengaku Zasshi</em> 29 (3): 371–80.
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-pmid6598211" class="csl-entry">
+Yasuda, N. 1984. <span>“<span class="nocase"><span>A</span> note on gene frequency estimation in the <span>A</span><span>B</span><span>O</span> and <span>A</span><span>B</span><span>O</span>-like system</span>.”</span> <em>Jinrui Idengaku Zasshi</em> 29 (3): 371–80.
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="5">
+<li id="fn5"><p>Ya veremos en otras partes que el concepto de “verdadero valor” de
+un parámetro está ligado a una corriente estadística llamada
+“frecuentista” y que se contrapone en cierta manera a una visión más
+subjetiva de la probabilidad, representada en la escuela
+“bayesiana”.<a href="epidemio.html#fnref5" class="footnote-back">↩︎</a></p></li>
+<li id="fn6"><p>Hacemos de cuenta que se trata de un solo tipo de alelo
+defectuoso, si bien a nivel molecular los alelos defectuosos pueden
+ser varios diferentes, con efectos deletéreos, a nivel fenotípico se
+comportan como si se tratase de un mismo alelo (ver <a href="epidemio.html#ejercicio-2.1">Ejercicio 2.1</a>).<a href="epidemio.html#fnref6" class="footnote-back">↩︎</a></p></li>
+<li id="fn7"><p>Descubierto por el médico e inmunólogo austríaco Karl Landsteiner
+en 1901, lo que le valió el premio Nobel de Medicina y Fisiología en
+1931.<a href="epidemio.html#fnref7" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="genética-de-poblaciones.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/02-GenEpidemiology.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["HWEA2022.pdf", "HWEA2022.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
