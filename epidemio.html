@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Capítulo 2 Epidemiología Genética | Human Whole Exome Analysis</title>
   <meta name="description" content="Apuntes del curso Human Whole Exome Analysis" />
-  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Capítulo 2 Epidemiología Genética | Human Whole Exome Analysis" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Lucía Spangenberg" />
 
 
-<meta name="date" content="2022-11-17" />
+<meta name="date" content="2023-09-23" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -93,7 +93,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -106,7 +106,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -453,17 +453,17 @@ Het_{Tur}=2p_{Tur}q_{Tur}=2*(1-0,01961161)*0,01961161=0,038454 \sim 3,85\%
 \end{equation}\]</span></p>
 <hr />
 <p>En un estudio de metanálisis se identificaron diferentes estudios previos con información de la prevalencia de PKU para diferentes poblaciones del Mediterráneo oriental y panamercianas. Las prevalencias observadas fueron las siguientes: <span class="math inline">\(21.8,15.97,10.39,6.79,19.78,7.48,4.18,6.83,1.47,19.22\)</span> casos por 100.000 nacidos para las mediterráneas, mientras que fue de <span class="math inline">\(10.40,5.12,5.82,5.28,4.80,9.20\)</span> para las panamericanas. Vamos a estimar la frecuencia del alelo defectuoso en las diferentes poblaciones, pero ahora usando <strong>R</strong>.</p>
-<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="epidemio.html#cb200-1" aria-hidden="true" tabindex="-1"></a>prevalenciasM<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="fl">21.8</span>,<span class="fl">15.97</span>,<span class="fl">10.39</span>,<span class="fl">6.79</span>,<span class="fl">19.78</span>,<span class="fl">7.48</span>,<span class="fl">4.18</span>,<span class="fl">6.83</span>,<span class="fl">1.47</span>,<span class="fl">19.22</span>)<span class="sc">/</span><span class="fl">1e5</span></span>
-<span id="cb200-2"><a href="epidemio.html#cb200-2" aria-hidden="true" tabindex="-1"></a>(freqrecesivoM<span class="ot">&lt;-</span><span class="fu">sqrt</span>(prevalenciasM))</span></code></pre></div>
+<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="epidemio.html#cb210-1" aria-hidden="true" tabindex="-1"></a>prevalenciasM<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="fl">21.8</span>,<span class="fl">15.97</span>,<span class="fl">10.39</span>,<span class="fl">6.79</span>,<span class="fl">19.78</span>,<span class="fl">7.48</span>,<span class="fl">4.18</span>,<span class="fl">6.83</span>,<span class="fl">1.47</span>,<span class="fl">19.22</span>)<span class="sc">/</span><span class="fl">1e5</span></span>
+<span id="cb210-2"><a href="epidemio.html#cb210-2" aria-hidden="true" tabindex="-1"></a>(freqrecesivoM<span class="ot">&lt;-</span><span class="fu">sqrt</span>(prevalenciasM))</span></code></pre></div>
 <pre><code>##  [1] 0.014764823 0.012637247 0.010193135 0.008240146 0.014064139 0.008648699
 ##  [7] 0.006465292 0.008264381 0.003834058 0.013863621</code></pre>
-<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="epidemio.html#cb202-1" aria-hidden="true" tabindex="-1"></a>prevalenciasA<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="fl">10.40</span>,<span class="fl">5.12</span>,<span class="fl">5.82</span>,<span class="fl">5.28</span>,<span class="fl">4.80</span>,<span class="fl">9.20</span>)<span class="sc">/</span><span class="fl">1e5</span></span>
-<span id="cb202-2"><a href="epidemio.html#cb202-2" aria-hidden="true" tabindex="-1"></a>(freqrecesivoA<span class="ot">&lt;-</span><span class="fu">sqrt</span>(prevalenciasA))</span></code></pre></div>
+<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="epidemio.html#cb212-1" aria-hidden="true" tabindex="-1"></a>prevalenciasA<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="fl">10.40</span>,<span class="fl">5.12</span>,<span class="fl">5.82</span>,<span class="fl">5.28</span>,<span class="fl">4.80</span>,<span class="fl">9.20</span>)<span class="sc">/</span><span class="fl">1e5</span></span>
+<span id="cb212-2"><a href="epidemio.html#cb212-2" aria-hidden="true" tabindex="-1"></a>(freqrecesivoA<span class="ot">&lt;-</span><span class="fu">sqrt</span>(prevalenciasA))</span></code></pre></div>
 <pre><code>## [1] 0.010198039 0.007155418 0.007628892 0.007266361 0.006928203 0.009591663</code></pre>
 <p><strong>¿Existen diferencias significativas entre estas poblaciones?</strong></p>
-<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb204-1"><a href="epidemio.html#cb204-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(prevalenciasA,prevalenciasM,<span class="at">col=</span><span class="fu">c</span>(<span class="st">&quot;red&quot;</span>,<span class="st">&quot;green&quot;</span>),<span class="at">varwidth=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb214-1"><a href="epidemio.html#cb214-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(prevalenciasA,prevalenciasM,<span class="at">col=</span><span class="fu">c</span>(<span class="st">&quot;red&quot;</span>,<span class="st">&quot;green&quot;</span>),<span class="at">varwidth=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 <p><img src="HWEA2022_files/figure-html/chunk701-1.png" width="672" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb205-1"><a href="epidemio.html#cb205-1" aria-hidden="true" tabindex="-1"></a>(midf<span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="st">&quot;prevalencia&quot;</span><span class="ot">=</span><span class="fu">c</span>(prevalenciasA,prevalenciasM),<span class="st">&quot;poblacion&quot;</span><span class="ot">=</span><span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">&quot;A&quot;</span>,<span class="fu">length</span>(prevalenciasA)),<span class="fu">rep</span>(<span class="st">&quot;M&quot;</span>,<span class="fu">length</span>(prevalenciasM)))))</span></code></pre></div>
+<div class="sourceCode" id="cb215"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb215-1"><a href="epidemio.html#cb215-1" aria-hidden="true" tabindex="-1"></a>(midf<span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="st">&quot;prevalencia&quot;</span><span class="ot">=</span><span class="fu">c</span>(prevalenciasA,prevalenciasM),<span class="st">&quot;poblacion&quot;</span><span class="ot">=</span><span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">&quot;A&quot;</span>,<span class="fu">length</span>(prevalenciasA)),<span class="fu">rep</span>(<span class="st">&quot;M&quot;</span>,<span class="fu">length</span>(prevalenciasM)))))</span></code></pre></div>
 <pre><code>##    prevalencia poblacion
 ## 1    0.0001040         A
 ## 2    0.0000512         A
@@ -481,7 +481,7 @@ Het_{Tur}=2p_{Tur}q_{Tur}=2*(1-0,01961161)*0,01961161=0,038454 \sim 3,85\%
 ## 14   0.0000683         M
 ## 15   0.0000147         M
 ## 16   0.0001922         M</code></pre>
-<div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb207-1"><a href="epidemio.html#cb207-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kruskal.test</span>(prevalencia<span class="sc">~</span>poblacion,<span class="at">data=</span>midf)</span></code></pre></div>
+<div class="sourceCode" id="cb217"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb217-1"><a href="epidemio.html#cb217-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kruskal.test</span>(prevalencia<span class="sc">~</span>poblacion,<span class="at">data=</span>midf)</span></code></pre></div>
 <pre><code>## 
 ##  Kruskal-Wallis rank sum test
 ## 
@@ -527,33 +527,33 @@ solo alelo defectuoso.</p>
 <h4>Ejemplo 2.2<a href="epidemio.html#ejemplo-2.2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>En una enfermedad con base genética de carácter recesivo fueron identificados 5 variantes (alelos) que son disruptivas a nivel de la proteína codificada. Las frecuencias de estas 5 variantes fueron las siguientes: <span class="math inline">\(D^-_1=0.030, D^-_2=0.017, D^-_3=0.041,D^-_4=0.001,D^-_5=0.011\)</span>. Calcular la proporción de enfermos esperada de acuerdo al equilibrio de Hardy-Weinberg.</p>
 <p>De acuerdo a lo que vimos previamente, alcanza con sumar las frecuencias de todos los alelos deletéreos recesivos y luego calcular el cuadrado de este número, es decir:</p>
-<div class="sourceCode" id="cb209"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb209-1"><a href="epidemio.html#cb209-1" aria-hidden="true" tabindex="-1"></a>fdel<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="fl">0.030</span>, <span class="fl">0.017</span>, <span class="fl">0.041</span>,<span class="fl">0.001</span>,<span class="fl">0.011</span>)</span>
-<span id="cb209-2"><a href="epidemio.html#cb209-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(fdel)<span class="ot">&lt;-</span><span class="fu">paste</span>(<span class="st">&quot;D&quot;</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,<span class="at">sep=</span><span class="st">&quot;&quot;</span>)</span>
-<span id="cb209-3"><a href="epidemio.html#cb209-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(fdel)</span></code></pre></div>
+<div class="sourceCode" id="cb219"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb219-1"><a href="epidemio.html#cb219-1" aria-hidden="true" tabindex="-1"></a>fdel<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="fl">0.030</span>, <span class="fl">0.017</span>, <span class="fl">0.041</span>,<span class="fl">0.001</span>,<span class="fl">0.011</span>)</span>
+<span id="cb219-2"><a href="epidemio.html#cb219-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(fdel)<span class="ot">&lt;-</span><span class="fu">paste</span>(<span class="st">&quot;D&quot;</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,<span class="at">sep=</span><span class="st">&quot;&quot;</span>)</span>
+<span id="cb219-3"><a href="epidemio.html#cb219-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(fdel)</span></code></pre></div>
 <pre><code>## [1] 0.1</code></pre>
-<div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb211-1"><a href="epidemio.html#cb211-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(fdel)<span class="sc">^</span><span class="dv">2</span></span></code></pre></div>
+<div class="sourceCode" id="cb221"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb221-1"><a href="epidemio.html#cb221-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(fdel)<span class="sc">^</span><span class="dv">2</span></span></code></pre></div>
 <pre><code>## [1] 0.01</code></pre>
 <p>La otra forma, es calcular la proporción esperada de cada genotipo recesivo (es decir, la combinación de un alelo recesivo por parte de padre con uno recesivo de parte de madre) y sumar todos los resultados:</p>
-<div class="sourceCode" id="cb213"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb213-1"><a href="epidemio.html#cb213-1" aria-hidden="true" tabindex="-1"></a>matprop<span class="ot">&lt;-</span>fdel<span class="sc">%*%</span><span class="fu">t</span>(fdel)</span>
-<span id="cb213-2"><a href="epidemio.html#cb213-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(matprop)<span class="ot">&lt;-</span><span class="fu">names</span>(fdel)</span>
-<span id="cb213-3"><a href="epidemio.html#cb213-3" aria-hidden="true" tabindex="-1"></a>matprop</span></code></pre></div>
+<div class="sourceCode" id="cb223"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb223-1"><a href="epidemio.html#cb223-1" aria-hidden="true" tabindex="-1"></a>matprop<span class="ot">&lt;-</span>fdel<span class="sc">%*%</span><span class="fu">t</span>(fdel)</span>
+<span id="cb223-2"><a href="epidemio.html#cb223-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(matprop)<span class="ot">&lt;-</span><span class="fu">names</span>(fdel)</span>
+<span id="cb223-3"><a href="epidemio.html#cb223-3" aria-hidden="true" tabindex="-1"></a>matprop</span></code></pre></div>
 <pre><code>##         D1       D2       D3      D4       D5
 ## D1 0.00090 0.000510 0.001230 3.0e-05 0.000330
 ## D2 0.00051 0.000289 0.000697 1.7e-05 0.000187
 ## D3 0.00123 0.000697 0.001681 4.1e-05 0.000451
 ## D4 0.00003 0.000017 0.000041 1.0e-06 0.000011
 ## D5 0.00033 0.000187 0.000451 1.1e-05 0.000121</code></pre>
-<div class="sourceCode" id="cb215"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb215-1"><a href="epidemio.html#cb215-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(matprop)</span></code></pre></div>
+<div class="sourceCode" id="cb225"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb225-1"><a href="epidemio.html#cb225-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(matprop)</span></code></pre></div>
 <pre><code>## [1] 0.01</code></pre>
 <p>que, obviamente, nos da el mismo resultado. Sin embargo, si las distintas combinaciones de alelos presentan diferente severidad, puede ser importante conocer las frecuencias esperadas de cada tipo de combinación. En este sentido, es muy fácil de obtener este resultado ya que lo único que tenemos que hacer es multiplicar por 2 las proporciones de los heterocigotos (porque hay dos combinaciones de alelo padre y alelo madre que producen el mismo genotipo), mientras que las frecuencias de los homocigotos (diagonla de la matriz) es la que ya aparece ahí. Una forma de hacer esto es la siguiente:</p>
-<div class="sourceCode" id="cb217"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb217-1"><a href="epidemio.html#cb217-1" aria-hidden="true" tabindex="-1"></a><span class="fu">upper.tri</span>(matprop)<span class="sc">*</span>matprop<span class="sc">+</span><span class="fu">upper.tri</span>(matprop,<span class="at">diag=</span><span class="cn">TRUE</span>)<span class="sc">*</span>matprop</span></code></pre></div>
+<div class="sourceCode" id="cb227"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb227-1"><a href="epidemio.html#cb227-1" aria-hidden="true" tabindex="-1"></a><span class="fu">upper.tri</span>(matprop)<span class="sc">*</span>matprop<span class="sc">+</span><span class="fu">upper.tri</span>(matprop,<span class="at">diag=</span><span class="cn">TRUE</span>)<span class="sc">*</span>matprop</span></code></pre></div>
 <pre><code>##       D1       D2       D3      D4       D5
 ## D1 9e-04 0.001020 0.002460 6.0e-05 0.000660
 ## D2 0e+00 0.000289 0.001394 3.4e-05 0.000374
 ## D3 0e+00 0.000000 0.001681 8.2e-05 0.000902
 ## D4 0e+00 0.000000 0.000000 1.0e-06 0.000022
 ## D5 0e+00 0.000000 0.000000 0.0e+00 0.000121</code></pre>
-<div class="sourceCode" id="cb219"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb219-1"><a href="epidemio.html#cb219-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">upper.tri</span>(matprop)<span class="sc">*</span>matprop<span class="sc">+</span><span class="fu">upper.tri</span>(matprop,<span class="at">diag=</span><span class="cn">TRUE</span>)<span class="sc">*</span>matprop)</span></code></pre></div>
+<div class="sourceCode" id="cb229"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb229-1"><a href="epidemio.html#cb229-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">upper.tri</span>(matprop)<span class="sc">*</span>matprop<span class="sc">+</span><span class="fu">upper.tri</span>(matprop,<span class="at">diag=</span><span class="cn">TRUE</span>)<span class="sc">*</span>matprop)</span></code></pre></div>
 <pre><code>## [1] 0.01</code></pre>
 </div>
 </div>
@@ -780,9 +780,9 @@ marginalmente para decidir cuál solución debería ser <span class="math inline
 <div id="clinvar" class="section level2 hasAnchor" number="2.4">
 <h2><span class="header-section-number">2.4</span> ClinVar<a href="epidemio.html#clinvar" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Recuperar la información de la base de datos ClinVar suele ser de mucha importancia a la hora de anotar las variantes de un VCF, por ejemplo. Un paquete que me permite hacer este tipo de anotaciones es <strong>clinvaR</strong>. Para recuperar la información de la última versión, podemos hacer los siguiente:</p>
-<div class="sourceCode" id="cb221"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb221-1"><a href="epidemio.html#cb221-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages(&quot;devtools&quot;)</span></span>
-<span id="cb221-2"><a href="epidemio.html#cb221-2" aria-hidden="true" tabindex="-1"></a><span class="co"># devtools::install_github(&quot;jamesdiao/clinvaR&quot;)</span></span>
-<span id="cb221-3"><a href="epidemio.html#cb221-3" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(clinvaR)</span></code></pre></div>
+<div class="sourceCode" id="cb231"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb231-1"><a href="epidemio.html#cb231-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages(&quot;devtools&quot;)</span></span>
+<span id="cb231-2"><a href="epidemio.html#cb231-2" aria-hidden="true" tabindex="-1"></a><span class="co"># devtools::install_github(&quot;jamesdiao/clinvaR&quot;)</span></span>
+<span id="cb231-3"><a href="epidemio.html#cb231-3" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(clinvaR)</span></code></pre></div>
 <pre><code>## Loading required package: clinvaR</code></pre>
 <pre><code>## Loading required package: ggplot2</code></pre>
 <pre><code>## Loading required package: dplyr</code></pre>
@@ -791,6 +791,9 @@ marginalmente para decidir cuál solución debería ser <span class="math inline
 <pre><code>## The following object is masked from &#39;package:biomaRt&#39;:
 ## 
 ##     select</code></pre>
+<pre><code>## The following object is masked from &#39;package:bit&#39;:
+## 
+##     symdiff</code></pre>
 <pre><code>## The following objects are masked from &#39;package:stats&#39;:
 ## 
 ##     filter, lag</code></pre>
@@ -813,10 +816,10 @@ marginalmente para decidir cuál solución debería ser <span class="math inline
 ## 
 ##     clone</code></pre>
 <pre><code>## Loading required package: knitr</code></pre>
-<div class="sourceCode" id="cb238"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb238-1"><a href="epidemio.html#cb238-1" aria-hidden="true" tabindex="-1"></a>newest_clinvar <span class="ot">&lt;-</span> <span class="fu">get_clinvar</span>(<span class="fu">Sys.Date</span>())</span>
-<span id="cb238-2"><a href="epidemio.html#cb238-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(newest_clinvar)</span></code></pre></div>
+<div class="sourceCode" id="cb249"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb249-1"><a href="epidemio.html#cb249-1" aria-hidden="true" tabindex="-1"></a>newest_clinvar <span class="ot">&lt;-</span> <span class="fu">get_clinvar</span>(<span class="fu">Sys.Date</span>())</span>
+<span id="cb249-2"><a href="epidemio.html#cb249-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(newest_clinvar)</span></code></pre></div>
 <pre><code>## [1] 253110     11</code></pre>
-<div class="sourceCode" id="cb240"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb240-1"><a href="epidemio.html#cb240-1" aria-hidden="true" tabindex="-1"></a>newest_clinvar[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,]</span></code></pre></div>
+<div class="sourceCode" id="cb251"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb251-1"><a href="epidemio.html#cb251-1" aria-hidden="true" tabindex="-1"></a>newest_clinvar[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,]</span></code></pre></div>
 <pre><code>##         VAR_ID  GENE CHROM    POS REF ALT          ID CLNSIG
 ## 1 1_949523_C_T ISG15     1 949523   C   T rs786201005      5
 ## 2 1_949608_G_A ISG15     1 949608   G   A      rs1921      2
@@ -836,19 +839,19 @@ marginalmente para decidir cuál solución debería ser <span class="math inline
 ## 4                     FALSE                   FALSE
 ## 5                     FALSE                   FALSE</code></pre>
 <p>Veamos que cromosomas están representados en lo recuperado del ClinVar.</p>
-<div class="sourceCode" id="cb242"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb242-1"><a href="epidemio.html#cb242-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(newest_clinvar<span class="sc">$</span>CHROM)</span></code></pre></div>
+<div class="sourceCode" id="cb253"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb253-1"><a href="epidemio.html#cb253-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(newest_clinvar<span class="sc">$</span>CHROM)</span></code></pre></div>
 <pre><code>## 
 ##     1    10    11    12    13    14    15    16    17    18    19     2    20 
 ## 19099  9615 16403 12387  8350  7538  7887 13651 17654  4287 11803 28022  4435 
 ##    21    22     3     4     5     6     7     8     9    MT     X     Y 
 ##  3020  4468 12748  7330 13485  9463 11109  7855 11147   474 10859    21</code></pre>
 <p>Si queremos ver cuantas de las variantes en nuestro juego de datos de genotipos en las distintas poblaciones se encuentra en la base de datos de ClinVar y luego unir la información, podemos hacer:</p>
-<div class="sourceCode" id="cb244"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb244-1"><a href="epidemio.html#cb244-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(snps<span class="sc">$</span>ID<span class="sc">%in%</span>newest_clinvar<span class="sc">$</span>ID)</span></code></pre></div>
+<div class="sourceCode" id="cb255"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb255-1"><a href="epidemio.html#cb255-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(snps<span class="sc">$</span>ID<span class="sc">%in%</span>newest_clinvar<span class="sc">$</span>ID)</span></code></pre></div>
 <pre><code>## [1] 396</code></pre>
-<div class="sourceCode" id="cb246"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb246-1"><a href="epidemio.html#cb246-1" aria-hidden="true" tabindex="-1"></a>misnps.clinv<span class="ot">&lt;-</span><span class="fu">merge</span>(snps,newest_clinvar,<span class="at">by=</span><span class="st">&quot;ID&quot;</span>)</span>
-<span id="cb246-2"><a href="epidemio.html#cb246-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(misnps.clinv)</span></code></pre></div>
+<div class="sourceCode" id="cb257"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb257-1"><a href="epidemio.html#cb257-1" aria-hidden="true" tabindex="-1"></a>misnps.clinv<span class="ot">&lt;-</span><span class="fu">merge</span>(snps,newest_clinvar,<span class="at">by=</span><span class="st">&quot;ID&quot;</span>)</span>
+<span id="cb257-2"><a href="epidemio.html#cb257-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(misnps.clinv)</span></code></pre></div>
 <pre><code>## [1] 402  18</code></pre>
-<div class="sourceCode" id="cb248"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb248-1"><a href="epidemio.html#cb248-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(misnps.clinv)</span></code></pre></div>
+<div class="sourceCode" id="cb259"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb259-1"><a href="epidemio.html#cb259-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(misnps.clinv)</span></code></pre></div>
 <pre><code>##           ID CHROM.x     POS.x REF.x ALT.x QUAL FILTER INFO           VAR_ID
 ## 1 rs10037067       5  89985882     1     3 &lt;NA&gt;   &lt;NA&gt;   PR   5_89985882_A_G
 ## 2 rs10063294       5  35877505     3     1 &lt;NA&gt;   &lt;NA&gt;   PR   5_35877505_G_A
@@ -890,7 +893,7 @@ marginalmente para decidir cuál solución debería ser <span class="math inline
 255 - other</p>
 <p>Por otro lado, la columna <strong>CLNDSDB</strong> contiene la información <strong>Variant disease database name</strong>, es decir, el nombre de enfermedad en la base de datos.</p>
 <p>Veamos si ahora podemos recuperar información de variantes con algún tipo específico de código de patogenicidad (o no). Por ejemplo, si queremos identificar en nuestro juego de datos las variantes que afectan la respuesta a drogas (CLNSIG=6), podemos hacer:</p>
-<div class="sourceCode" id="cb250"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb250-1"><a href="epidemio.html#cb250-1" aria-hidden="true" tabindex="-1"></a>misnps.clinv[<span class="fu">grep</span>(<span class="st">&quot;6&quot;</span>,misnps.clinv<span class="sc">$</span>CLNSIG),]</span></code></pre></div>
+<div class="sourceCode" id="cb261"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb261-1"><a href="epidemio.html#cb261-1" aria-hidden="true" tabindex="-1"></a>misnps.clinv[<span class="fu">grep</span>(<span class="st">&quot;6&quot;</span>,misnps.clinv<span class="sc">$</span>CLNSIG),]</span></code></pre></div>
 <pre><code>##             ID CHROM.x     POS.x REF.x ALT.x QUAL FILTER INFO          VAR_ID
 ## 8   rs10246939       7 141672604     2     4 &lt;NA&gt;   &lt;NA&gt;   PR 7_141672604_T_C
 ## 26  rs10509681      10  96798749     4     2 &lt;NA&gt;   &lt;NA&gt;   PR 10_96798749_T_C
@@ -920,7 +923,7 @@ marginalmente para decidir cuál solución debería ser <span class="math inline
 ## 176                     FALSE                   FALSE
 ## 371                     FALSE                   FALSE</code></pre>
 <p>Recuperar las variantes patogénicas debería ser tan sencillo, sin embargo, al existir un código “5” y otro “255” la técnica que usamos antes de agarrarlas con un <em>grep()</em> deja de funcionar. Una alternativa podría ser la siguiente:</p>
-<div class="sourceCode" id="cb252"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb252-1"><a href="epidemio.html#cb252-1" aria-hidden="true" tabindex="-1"></a>misnps.clinv[<span class="fu">which</span>(misnps.clinv<span class="sc">$</span>CLNSIG<span class="sc">==</span><span class="st">&quot;5&quot;</span>),]</span></code></pre></div>
+<div class="sourceCode" id="cb263"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb263-1"><a href="epidemio.html#cb263-1" aria-hidden="true" tabindex="-1"></a>misnps.clinv[<span class="fu">which</span>(misnps.clinv<span class="sc">$</span>CLNSIG<span class="sc">==</span><span class="st">&quot;5&quot;</span>),]</span></code></pre></div>
 <pre><code>##            ID CHROM.x    POS.x REF.x ALT.x QUAL FILTER INFO          VAR_ID
 ## 174 rs2228671      19 11210912     2     4 &lt;NA&gt;   &lt;NA&gt;   PR 19_11210912_C_A
 ## 265   rs37369       5 35037115     2     4 &lt;NA&gt;   &lt;NA&gt;   PR  5_35037115_C_T
@@ -931,7 +934,7 @@ marginalmente para decidir cuál solución debería ser <span class="math inline
 ## 174                      TRUE                    TRUE
 ## 265                      TRUE                    TRUE</code></pre>
 <p>Sin embargo, esta idea nos deja afuera las patogénica con otras CLNSIG compartidas. Una alternativa más eficiente es la siguiente</p>
-<div class="sourceCode" id="cb254"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb254-1"><a href="epidemio.html#cb254-1" aria-hidden="true" tabindex="-1"></a>misnps.clinv[<span class="fu">which</span>(<span class="fu">lapply</span>(<span class="fu">as.character</span>(misnps.clinv<span class="sc">$</span>CLNSIG),<span class="cf">function</span>(x) <span class="fu">sum</span>(<span class="fu">strsplit</span>(x,<span class="st">&quot;,&quot;</span>)[[<span class="dv">1</span>]]<span class="sc">==</span><span class="st">&quot;5&quot;</span>))<span class="sc">&gt;</span><span class="dv">0</span>),]</span></code></pre></div>
+<div class="sourceCode" id="cb265"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb265-1"><a href="epidemio.html#cb265-1" aria-hidden="true" tabindex="-1"></a>misnps.clinv[<span class="fu">which</span>(<span class="fu">lapply</span>(<span class="fu">as.character</span>(misnps.clinv<span class="sc">$</span>CLNSIG),<span class="cf">function</span>(x) <span class="fu">sum</span>(<span class="fu">strsplit</span>(x,<span class="st">&quot;,&quot;</span>)[[<span class="dv">1</span>]]<span class="sc">==</span><span class="st">&quot;5&quot;</span>))<span class="sc">&gt;</span><span class="dv">0</span>),]</span></code></pre></div>
 <pre><code>##            ID CHROM.x    POS.x REF.x ALT.x QUAL FILTER INFO          VAR_ID
 ## 174 rs2228671      19 11210912     2     4 &lt;NA&gt;   &lt;NA&gt;   PR 19_11210912_C_A
 ## 265   rs37369       5 35037115     2     4 &lt;NA&gt;   &lt;NA&gt;   PR  5_35037115_C_T
@@ -942,11 +945,11 @@ marginalmente para decidir cuál solución debería ser <span class="math inline
 ## 174                      TRUE                    TRUE
 ## 265                      TRUE                    TRUE</code></pre>
 <p>Más aún, podemos crear una función para seleccionar códigos que nos interesan y que no aparezcan lo que no nos interesan</p>
-<div class="sourceCode" id="cb256"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb256-1"><a href="epidemio.html#cb256-1" aria-hidden="true" tabindex="-1"></a>mifilt<span class="ot">&lt;-</span><span class="cf">function</span>(CLNSIG,yes,no) {<span class="fu">which</span>(<span class="fu">lapply</span>(<span class="fu">as.character</span>(CLNSIG),<span class="cf">function</span>(x) <span class="fu">sum</span>(<span class="fu">strsplit</span>(x,<span class="st">&quot;,&quot;</span>)[[<span class="dv">1</span>]]<span class="sc">%in%</span>yes))<span class="sc">&gt;</span><span class="dv">0</span> <span class="sc">&amp;</span> <span class="sc">!</span><span class="fu">lapply</span>(<span class="fu">as.character</span>(CLNSIG),<span class="cf">function</span>(x) <span class="fu">sum</span>(<span class="fu">strsplit</span>(x,<span class="st">&quot;,&quot;</span>)[[<span class="dv">1</span>]]<span class="sc">%in%</span>no))<span class="sc">&gt;</span><span class="dv">0</span>)}</span>
-<span id="cb256-2"><a href="epidemio.html#cb256-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb256-3"><a href="epidemio.html#cb256-3" aria-hidden="true" tabindex="-1"></a>(pasan.filtro<span class="ot">&lt;-</span><span class="fu">mifilt</span>(<span class="at">CLNSIG=</span>misnps.clinv<span class="sc">$</span>CLNSIG,<span class="at">yes=</span><span class="fu">c</span>(<span class="st">&quot;5&quot;</span>),<span class="at">no=</span><span class="fu">c</span>(<span class="st">&quot;255&quot;</span>)))</span></code></pre></div>
+<div class="sourceCode" id="cb267"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb267-1"><a href="epidemio.html#cb267-1" aria-hidden="true" tabindex="-1"></a>mifilt<span class="ot">&lt;-</span><span class="cf">function</span>(CLNSIG,yes,no) {<span class="fu">which</span>(<span class="fu">lapply</span>(<span class="fu">as.character</span>(CLNSIG),<span class="cf">function</span>(x) <span class="fu">sum</span>(<span class="fu">strsplit</span>(x,<span class="st">&quot;,&quot;</span>)[[<span class="dv">1</span>]]<span class="sc">%in%</span>yes))<span class="sc">&gt;</span><span class="dv">0</span> <span class="sc">&amp;</span> <span class="sc">!</span><span class="fu">lapply</span>(<span class="fu">as.character</span>(CLNSIG),<span class="cf">function</span>(x) <span class="fu">sum</span>(<span class="fu">strsplit</span>(x,<span class="st">&quot;,&quot;</span>)[[<span class="dv">1</span>]]<span class="sc">%in%</span>no))<span class="sc">&gt;</span><span class="dv">0</span>)}</span>
+<span id="cb267-2"><a href="epidemio.html#cb267-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb267-3"><a href="epidemio.html#cb267-3" aria-hidden="true" tabindex="-1"></a>(pasan.filtro<span class="ot">&lt;-</span><span class="fu">mifilt</span>(<span class="at">CLNSIG=</span>misnps.clinv<span class="sc">$</span>CLNSIG,<span class="at">yes=</span><span class="fu">c</span>(<span class="st">&quot;5&quot;</span>),<span class="at">no=</span><span class="fu">c</span>(<span class="st">&quot;255&quot;</span>)))</span></code></pre></div>
 <pre><code>## [1] 174 265</code></pre>
-<div class="sourceCode" id="cb258"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb258-1"><a href="epidemio.html#cb258-1" aria-hidden="true" tabindex="-1"></a>(misnps.clinv<span class="fl">.5</span><span class="ot">&lt;-</span>misnps.clinv[pasan.filtro,])</span></code></pre></div>
+<div class="sourceCode" id="cb269"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb269-1"><a href="epidemio.html#cb269-1" aria-hidden="true" tabindex="-1"></a>(misnps.clinv<span class="fl">.5</span><span class="ot">&lt;-</span>misnps.clinv[pasan.filtro,])</span></code></pre></div>
 <pre><code>##            ID CHROM.x    POS.x REF.x ALT.x QUAL FILTER INFO          VAR_ID
 ## 174 rs2228671      19 11210912     2     4 &lt;NA&gt;   &lt;NA&gt;   PR 19_11210912_C_A
 ## 265   rs37369       5 35037115     2     4 &lt;NA&gt;   &lt;NA&gt;   PR  5_35037115_C_T
@@ -958,7 +961,7 @@ marginalmente para decidir cuál solución debería ser <span class="math inline
 ## 265                      TRUE                    TRUE</code></pre>
 <p><strong>¿Cuáles son las enfermedades asociadas a los SNPs presentes en nuestro juego de datos de poblaciones?</strong></p>
 <p>Por ejemplo, si ahora queremos quedarnos con las variantes no-patogénicas y probablemente-no-patogénicas, utilizando nuestra función podemos hacer:</p>
-<div class="sourceCode" id="cb260"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb260-1"><a href="epidemio.html#cb260-1" aria-hidden="true" tabindex="-1"></a>(pasan.filtro<span class="ot">&lt;-</span><span class="fu">mifilt</span>(<span class="at">CLNSIG=</span>misnps.clinv<span class="sc">$</span>CLNSIG,<span class="at">yes=</span><span class="fu">c</span>(<span class="st">&quot;2&quot;</span>,<span class="st">&quot;3&quot;</span>),<span class="at">no=</span><span class="fu">c</span>(<span class="st">&quot;255&quot;</span>)))</span></code></pre></div>
+<div class="sourceCode" id="cb271"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb271-1"><a href="epidemio.html#cb271-1" aria-hidden="true" tabindex="-1"></a>(pasan.filtro<span class="ot">&lt;-</span><span class="fu">mifilt</span>(<span class="at">CLNSIG=</span>misnps.clinv<span class="sc">$</span>CLNSIG,<span class="at">yes=</span><span class="fu">c</span>(<span class="st">&quot;2&quot;</span>,<span class="st">&quot;3&quot;</span>),<span class="at">no=</span><span class="fu">c</span>(<span class="st">&quot;255&quot;</span>)))</span></code></pre></div>
 <pre><code>##   [1]   2   7  12  14  17  21  24  25  32  34  35  38  42  43  44  46  48  49
 ##  [19]  50  51  52  54  57  60  64  66  67  70  73  74  76  79  80  83  86  87
 ##  [37]  88  93  94  95  99 100 103 107 109 114 115 116 120 121 122 124 125 128
@@ -970,8 +973,8 @@ marginalmente para decidir cuál solución debería ser <span class="math inline
 ## [145] 328 329 330 332 333 336 337 340 346 347 348 349 350 354 355 356 359 360
 ## [163] 361 363 364 365 366 367 368 370 372 373 374 376 378 383 384 387 389 393
 ## [181] 397 398 399 400 401</code></pre>
-<div class="sourceCode" id="cb262"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb262-1"><a href="epidemio.html#cb262-1" aria-hidden="true" tabindex="-1"></a>misnps.clinv<span class="fl">.23</span><span class="ot">&lt;-</span>misnps.clinv[pasan.filtro,]</span>
-<span id="cb262-2"><a href="epidemio.html#cb262-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(misnps.clinv<span class="fl">.23</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb273"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb273-1"><a href="epidemio.html#cb273-1" aria-hidden="true" tabindex="-1"></a>misnps.clinv<span class="fl">.23</span><span class="ot">&lt;-</span>misnps.clinv[pasan.filtro,]</span>
+<span id="cb273-2"><a href="epidemio.html#cb273-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(misnps.clinv<span class="fl">.23</span>)</span></code></pre></div>
 <pre><code>##            ID CHROM.x     POS.x REF.x ALT.x QUAL FILTER INFO          VAR_ID
 ## 2  rs10063294       5  35877505     3     1 &lt;NA&gt;   &lt;NA&gt;   PR  5_35877505_G_A
 ## 7   rs1014867       4 126412891     2     4 &lt;NA&gt;   &lt;NA&gt;   PR 4_126412891_C_T
@@ -1000,13 +1003,13 @@ marginalmente para decidir cuál solución debería ser <span class="math inline
 ## 14                   FALSE
 ## 17                   FALSE
 ## 21                   FALSE</code></pre>
-<div class="sourceCode" id="cb264"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb264-1"><a href="epidemio.html#cb264-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(<span class="fu">as.character</span>(misnps.clinv<span class="fl">.23</span><span class="sc">$</span>CLNSIG))</span></code></pre></div>
+<div class="sourceCode" id="cb275"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb275-1"><a href="epidemio.html#cb275-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(<span class="fu">as.character</span>(misnps.clinv<span class="fl">.23</span><span class="sc">$</span>CLNSIG))</span></code></pre></div>
 <pre><code>## 
 ##   2   3 
 ## 141  44</code></pre>
 <p>Veamos si ahora podemos recuperar la información de los SNPs asociados a estas enfermedades en nuestro juego de datos y analizar cómo son las frecuencias en las diferentes poblaciones de nuestra base. La idea es sencilla: recuperar los identificadores de SNPs de la tabla “misnps.clinv.5” y luego subsetear la tabla de genotipos por estos identificadores.</p>
-<div class="sourceCode" id="cb266"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb266-1"><a href="epidemio.html#cb266-1" aria-hidden="true" tabindex="-1"></a>ngenot.estan.pato<span class="ot">&lt;-</span>ngenot.estan[misnps.clinv<span class="fl">.5</span><span class="sc">$</span>ID,]</span>
-<span id="cb266-2"><a href="epidemio.html#cb266-2" aria-hidden="true" tabindex="-1"></a>ngenot.estan.pato[,<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb277"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb277-1"><a href="epidemio.html#cb277-1" aria-hidden="true" tabindex="-1"></a>ngenot.estan.pato<span class="ot">&lt;-</span>ngenot.estan[misnps.clinv<span class="fl">.5</span><span class="sc">$</span>ID,]</span>
+<span id="cb277-2"><a href="epidemio.html#cb277-2" aria-hidden="true" tabindex="-1"></a>ngenot.estan.pato[,<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>]</span></code></pre></div>
 <pre><code>##           HGDP00479 HGDP00985 HGDP01094 HGDP00982 HGDP00911 HGDP01202 HGDP00461
 ## rs2228671         0         0         1         0         0         0         0
 ## rs37369           0         1         2         1         1         1         1
@@ -1014,17 +1017,17 @@ marginalmente para decidir cuál solución debería ser <span class="math inline
 ## rs2228671         0         0         0
 ## rs37369           1         1         1</code></pre>
 <p>Ahora, vamos a calcular la frecuencia por población, para cada uno de los dos SNPs. Como solo se trata de dos SNPs, vamos a tratar cada uno en forma individual, lo que resulta muy fácil:</p>
-<div class="sourceCode" id="cb268"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb268-1"><a href="epidemio.html#cb268-1" aria-hidden="true" tabindex="-1"></a>ag.rs2228671<span class="ot">&lt;-</span><span class="fu">aggregate</span>(ngenot.estan.pato[<span class="dv">1</span>,],<span class="at">by=</span><span class="fu">list</span>(<span class="st">&quot;Population&quot;</span><span class="ot">=</span>tb<span class="sc">$</span>Population.name),<span class="cf">function</span>(x)<span class="fu">sum</span>(x,<span class="at">na.rm=</span><span class="cn">TRUE</span>)<span class="sc">/</span>(<span class="dv">2</span><span class="sc">*</span><span class="fu">length</span>(x)))</span>
-<span id="cb268-2"><a href="epidemio.html#cb268-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb268-3"><a href="epidemio.html#cb268-3" aria-hidden="true" tabindex="-1"></a>ag.rs37369<span class="ot">&lt;-</span><span class="fu">aggregate</span>(ngenot.estan.pato[<span class="dv">2</span>,],<span class="at">by=</span><span class="fu">list</span>(<span class="st">&quot;Population&quot;</span><span class="ot">=</span>tb<span class="sc">$</span>Population.name),<span class="cf">function</span>(x)<span class="fu">sum</span>(x,<span class="at">na.rm=</span><span class="cn">TRUE</span>)<span class="sc">/</span>(<span class="dv">2</span><span class="sc">*</span><span class="fu">length</span>(x)))</span>
-<span id="cb268-4"><a href="epidemio.html#cb268-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb268-5"><a href="epidemio.html#cb268-5" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(ag.rs2228671<span class="sc">$</span>x,<span class="dv">20</span>,<span class="at">col=</span><span class="st">&quot;darkred&quot;</span>,<span class="at">xlab=</span><span class="st">&quot;frecuencia rs2228671&quot;</span>,<span class="at">ylab=</span><span class="st">&quot;Frecuencia&quot;</span>,<span class="at">main=</span><span class="st">&quot;&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb279"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb279-1"><a href="epidemio.html#cb279-1" aria-hidden="true" tabindex="-1"></a>ag.rs2228671<span class="ot">&lt;-</span><span class="fu">aggregate</span>(ngenot.estan.pato[<span class="dv">1</span>,],<span class="at">by=</span><span class="fu">list</span>(<span class="st">&quot;Population&quot;</span><span class="ot">=</span>tb<span class="sc">$</span>Population.name),<span class="cf">function</span>(x)<span class="fu">sum</span>(x,<span class="at">na.rm=</span><span class="cn">TRUE</span>)<span class="sc">/</span>(<span class="dv">2</span><span class="sc">*</span><span class="fu">length</span>(x)))</span>
+<span id="cb279-2"><a href="epidemio.html#cb279-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb279-3"><a href="epidemio.html#cb279-3" aria-hidden="true" tabindex="-1"></a>ag.rs37369<span class="ot">&lt;-</span><span class="fu">aggregate</span>(ngenot.estan.pato[<span class="dv">2</span>,],<span class="at">by=</span><span class="fu">list</span>(<span class="st">&quot;Population&quot;</span><span class="ot">=</span>tb<span class="sc">$</span>Population.name),<span class="cf">function</span>(x)<span class="fu">sum</span>(x,<span class="at">na.rm=</span><span class="cn">TRUE</span>)<span class="sc">/</span>(<span class="dv">2</span><span class="sc">*</span><span class="fu">length</span>(x)))</span>
+<span id="cb279-4"><a href="epidemio.html#cb279-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb279-5"><a href="epidemio.html#cb279-5" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(ag.rs2228671<span class="sc">$</span>x,<span class="dv">20</span>,<span class="at">col=</span><span class="st">&quot;darkred&quot;</span>,<span class="at">xlab=</span><span class="st">&quot;frecuencia rs2228671&quot;</span>,<span class="at">ylab=</span><span class="st">&quot;Frecuencia&quot;</span>,<span class="at">main=</span><span class="st">&quot;&quot;</span>)</span></code></pre></div>
 <p><img src="HWEA2022_files/figure-html/chunk860-1.png" width="672" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb269"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb269-1"><a href="epidemio.html#cb269-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(ag.rs37369<span class="sc">$</span>x,<span class="dv">20</span>,<span class="at">col=</span><span class="st">&quot;darkblue&quot;</span>,<span class="at">xlab=</span><span class="st">&quot;frecuencia rs2228671&quot;</span>,<span class="at">ylab=</span><span class="st">&quot;Frecuencia&quot;</span>,<span class="at">main=</span><span class="st">&quot;&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb280"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb280-1"><a href="epidemio.html#cb280-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(ag.rs37369<span class="sc">$</span>x,<span class="dv">20</span>,<span class="at">col=</span><span class="st">&quot;darkblue&quot;</span>,<span class="at">xlab=</span><span class="st">&quot;frecuencia rs2228671&quot;</span>,<span class="at">ylab=</span><span class="st">&quot;Frecuencia&quot;</span>,<span class="at">main=</span><span class="st">&quot;&quot;</span>)</span></code></pre></div>
 <p><img src="HWEA2022_files/figure-html/chunk860-2.png" width="672" style="display: block; margin: auto;" /></p>
 <p>Veamos ahora si podemos ordenar estas tablas por frecuencia, para entender que poblaciones son las que tienen en mayor frecuencia cada una de las variantes.</p>
-<div class="sourceCode" id="cb270"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb270-1"><a href="epidemio.html#cb270-1" aria-hidden="true" tabindex="-1"></a>ag.rs2228671.o<span class="ot">&lt;-</span>ag.rs2228671[<span class="fu">order</span>(ag.rs2228671<span class="sc">$</span>x, <span class="at">decreasing =</span> <span class="cn">TRUE</span>),]</span>
-<span id="cb270-2"><a href="epidemio.html#cb270-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(ag.rs2228671.o)</span></code></pre></div>
+<div class="sourceCode" id="cb281"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb281-1"><a href="epidemio.html#cb281-1" aria-hidden="true" tabindex="-1"></a>ag.rs2228671.o<span class="ot">&lt;-</span>ag.rs2228671[<span class="fu">order</span>(ag.rs2228671<span class="sc">$</span>x, <span class="at">decreasing =</span> <span class="cn">TRUE</span>),]</span>
+<span id="cb281-2"><a href="epidemio.html#cb281-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(ag.rs2228671.o)</span></code></pre></div>
 <pre><code>##           Population         x
 ## 50 Mozabite,Mozabite 0.5000000
 ## 10         Bedouin B 0.2500000
@@ -1032,8 +1035,8 @@ marginalmente para decidir cuál solución debería ser <span class="math inline
 ## 1             Adygei 0.1764706
 ## 8             Basque 0.1458333
 ## 49          Mozabite 0.1250000</code></pre>
-<div class="sourceCode" id="cb272"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb272-1"><a href="epidemio.html#cb272-1" aria-hidden="true" tabindex="-1"></a>ag.rs37369.o<span class="ot">&lt;-</span>ag.rs37369[<span class="fu">order</span>(ag.rs37369<span class="sc">$</span>x, <span class="at">decreasing =</span> <span class="cn">TRUE</span>),]</span>
-<span id="cb272-2"><a href="epidemio.html#cb272-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(ag.rs37369.o)</span></code></pre></div>
+<div class="sourceCode" id="cb283"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb283-1"><a href="epidemio.html#cb283-1" aria-hidden="true" tabindex="-1"></a>ag.rs37369.o<span class="ot">&lt;-</span>ag.rs37369[<span class="fu">order</span>(ag.rs37369<span class="sc">$</span>x, <span class="at">decreasing =</span> <span class="cn">TRUE</span>),]</span>
+<span id="cb283-2"><a href="epidemio.html#cb283-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(ag.rs37369.o)</span></code></pre></div>
 <pre><code>##            Population         x
 ## 33 Ju|&#39;hoan North,San 1.0000000
 ## 42         Mayan,Maya 1.0000000
@@ -1043,7 +1046,7 @@ marginalmente para decidir cuál solución debería ser <span class="math inline
 ## 41               Maya 0.7333333</code></pre>
 <p><strong>¿Qué comentarios te merecen estos resultados? ¿Pueden estas variantes ser muy patogénicas con las frecuencias que observamos? ¿A que se pueden deber las frecuencias extremas observadas en algunas poblaciones? ¿El valor de frecuencia relativa=1 significa que dicha variante está fijada en la población correspondiente?</strong></p>
 <p><strong>¿Qué comentarios te merecen las preguntas anteriores a la luz de los siguientes resultados?</strong></p>
-<div class="sourceCode" id="cb274"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb274-1"><a href="epidemio.html#cb274-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>(<span class="fu">table</span>(tb<span class="sc">$</span>Population.name))</span></code></pre></div>
+<div class="sourceCode" id="cb285"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb285-1"><a href="epidemio.html#cb285-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>(<span class="fu">table</span>(tb<span class="sc">$</span>Population.name))</span></code></pre></div>
 <pre><code>## 
 ##     Cambodian,Cambodian       Japanese,Japanese      Ju|&#39;hoan North,San 
 ##                       1                       1                       1 
@@ -1098,16 +1101,16 @@ marginalmente para decidir cuál solución debería ser <span class="math inline
 ##                    CEPH                Japanese                  Yoruba 
 ##                     108                     112                     125</code></pre>
 <p>Finalmente, otra alternativa interesante para la búsqueda de información sobre variantes es el paquete <strong>VarfromPDB</strong> que, sin embargo, nosotros no vamos a utilizar porque demora mucho en darnos una respuesta. El siguiente código (que no vamos a correr) es un ejemplo.</p>
-<div class="sourceCode" id="cb276"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb276-1"><a href="epidemio.html#cb276-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="cn">FALSE</span>){</span>
-<span id="cb276-2"><a href="epidemio.html#cb276-2" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages(&quot;VarfromPDB&quot;)</span></span>
-<span id="cb276-3"><a href="epidemio.html#cb276-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;VarfromPDB&quot;</span>)</span>
-<span id="cb276-4"><a href="epidemio.html#cb276-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb276-5"><a href="epidemio.html#cb276-5" aria-hidden="true" tabindex="-1"></a>clinvar.phenotype <span class="ot">=</span> <span class="fu">extract_clinvar</span>(<span class="at">keyword=</span><span class="st">&quot;retinoblastoma&quot;</span>)</span>
-<span id="cb276-6"><a href="epidemio.html#cb276-6" aria-hidden="true" tabindex="-1"></a>genes.clinvar <span class="ot">=</span> clinvar.phenotype[[<span class="dv">1</span>]]</span>
-<span id="cb276-7"><a href="epidemio.html#cb276-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">dim</span>(genes.clinvar))</span>
-<span id="cb276-8"><a href="epidemio.html#cb276-8" aria-hidden="true" tabindex="-1"></a>variants.clinvar <span class="ot">=</span> clinvar.phenotype[[<span class="dv">2</span>]]</span>
-<span id="cb276-9"><a href="epidemio.html#cb276-9" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">dim</span>(variants.clinvar))</span>
-<span id="cb276-10"><a href="epidemio.html#cb276-10" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb287"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb287-1"><a href="epidemio.html#cb287-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="cn">FALSE</span>){</span>
+<span id="cb287-2"><a href="epidemio.html#cb287-2" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages(&quot;VarfromPDB&quot;)</span></span>
+<span id="cb287-3"><a href="epidemio.html#cb287-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;VarfromPDB&quot;</span>)</span>
+<span id="cb287-4"><a href="epidemio.html#cb287-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb287-5"><a href="epidemio.html#cb287-5" aria-hidden="true" tabindex="-1"></a>clinvar.phenotype <span class="ot">=</span> <span class="fu">extract_clinvar</span>(<span class="at">keyword=</span><span class="st">&quot;retinoblastoma&quot;</span>)</span>
+<span id="cb287-6"><a href="epidemio.html#cb287-6" aria-hidden="true" tabindex="-1"></a>genes.clinvar <span class="ot">=</span> clinvar.phenotype[[<span class="dv">1</span>]]</span>
+<span id="cb287-7"><a href="epidemio.html#cb287-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">dim</span>(genes.clinvar))</span>
+<span id="cb287-8"><a href="epidemio.html#cb287-8" aria-hidden="true" tabindex="-1"></a>variants.clinvar <span class="ot">=</span> clinvar.phenotype[[<span class="dv">2</span>]]</span>
+<span id="cb287-9"><a href="epidemio.html#cb287-9" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">dim</span>(variants.clinvar))</span>
+<span id="cb287-10"><a href="epidemio.html#cb287-10" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <hr />
 </div>
 <div id="estudios-de-asociación-de-genoma-completo-gwas" class="section level2 hasAnchor" number="2.5">
@@ -1135,141 +1138,7 @@ Figura 2.3: Esquematización de los pasos en un estudio GWAS (figura del artícu
 <li><p>Los resultados pueden replicarse utilizando la replicación interna o la replicación externa en una cohorte independiente. Para la replicación externa, la cohorte independiente debe estar emparejada ancestralmente (es decir, tener el mismo perfil ancestral) y no compartir individuos o miembros de la familia con la cohorte de descubrimiento.</p></li>
 <li><p>Análisis in silico de estudios de asociación de todo el genoma (GWAS), utilizando información de recursos externos. Esto puede incluir mapeo fino in silico, mapeo de SNP a genes, mapeo de genes a funciones, análisis de vías, análisis de correlación genética, aleatorización mendeliana y predicción de riesgo poligénico. Después de los GWAS, las hipótesis funcionales pueden probarse utilizando técnicas experimentales como CRISPR o ensayos reporteros masivamente paralelos, o los resultados pueden validarse en un modelo de rasgo/enfermedad humano.</p></li>
 </ol>
-<!-- \ -->
-<!-- ## Ejercicios {#ejercicios-2 .unnumbered} -->
-<!-- #### Ejercicio 2.1{-} -->
-<!-- En la especie *Antirrhinum majus*, conocida vulgarmente como "boca de -->
-<!-- dragón", dos alelos en un gen que determina el color de las flores -->
-<!-- (**R** rojo y **W** blanco), cuando se encuentran en estado homocigoto -->
-<!-- producen (respectivamente) flores rojas y blancas, pero cuando se -->
-<!-- encuentran en estado heterocigoto producen flores rosadas; esto permite -->
-<!-- identificar claramente a los heterocigotos. En una población natural, en -->
-<!-- un área relativamente pequeña se contaron 122 flores rojas, 127 rosadas -->
-<!-- y 33 blancas. ¿Cuáles son las frecuencias estimadas de los alelos **R** -->
-<!-- y **W**? ¿Cuáles son las frecuencias esperadas para los distintos -->
-<!-- genotipos si la población estuviese en equilibrio de Hardy-Weinberg? -->
-<!-- ¿Podemos afirmar (estadísticamente) que la población no se encuentra en -->
-<!-- equilibrio de Hardy-Weinberg? -->
-<!-- ***Solución*** -->
-<!-- \begin{equation*} -->
-<!-- \begin{split} -->
-<!-- fr(R)=\frac{(2*fr(RR)+fr(RW))}{2*(fr(RR)+fr(RW)+fr(WW))}=\frac{2*122+127}{2*(122+127+33)}=\frac{371}{564}=0,6578014\\  -->
-<!-- fr(W)=1-0,6578014=0,3421986 & \\ -->
-<!-- E(fr(RR))_{HW}=Np^2=282*(0,6578014)^2=0.4327027*282=122,0222 \sim 122\\ -->
-<!-- E(fr(RW))_{HW}=2Npq=564*(0,6578014*0,3421986)=126,9557 \sim 127 \\ -->
-<!-- E(fr(WW))_{HW}=Nq^2=282*(0,3421986)^2=33,02217 \sim 33 -->
-<!-- \end{split} -->
-<!-- \end{equation*} -->
-<!-- El ajuste, más allá del redondeo, es casi perfecto, por lo que dado el -->
-<!-- número relativamente bajo de individuos y los pocos grados de libertad -->
-<!-- implicados (3 genotipos - 2 alelos = 1 grado de libertad) hacen -->
-<!-- innecesario el test estadístico más usual (test de $\chi^2$), pero el -->
-<!-- lector puede verificarlo fácilmente. -->
-<!-- #### Ejercicio 2.2{-} -->
-<!-- Estimaciones obtenidas en un trabajo previo realizado en una raza de -->
-<!-- gallinas en una población de otro país, la frecuencia del alelo **R**, -->
-<!-- en un locus autosomal con dos alelos (el otro es **r**) en una especie -->
-<!-- diploide es de $p=0,20$ (se desconoce el error estándar de los -->
-<!-- estimados, pero se asume muy bajo porque es el resultado de genotipar -->
-<!-- miles de individuos). Para determinar si la frecuencia del alelo **R** -->
-<!-- en nuestra población se realiza el genotipado de 20 animales y se -->
-<!-- observa un conteo de 5 alelos **R**. Calcular la probabilidad de -->
-<!-- observar exactamente ese conteo y luego calcular la de uno igual o menor -->
-<!-- si nuestra población tuviese las mismas frecuencias que la población del -->
-<!-- trabajo previo. -->
-<!-- ***Solución*** -->
-<!-- La probabilidad de obtener un conteo de 5 alelos **R** es la -->
-<!-- [fdp]{acronym-label="fdp" acronym-form="singular+short"} binomial, o sea -->
-<!-- $$\begin{aligned} -->
-<!-- Pr(X=5)={40\choose 5} 0,2^{5} (1-0,2)^{40-5}={40\choose 5} 0,2^{5} (0,8)^{35}=0,08541432 \sim 8,54\%\end{aligned}$$ -->
-<!-- La probabilidad de obtener un conteo de 5 o menos alelos **R** es la -->
-<!-- [fda]{acronym-label="fda" acronym-form="singular+short"} binomial, o -->
-<!-- sea, la suma de las probabilidades de obtener conteos de 0, 1, 2, 3, 4 y -->
-<!-- 5 $$\begin{aligned} -->
-<!-- Pr(X \leq 5)=\sum_{x=0}^{5} {40\choose x} p^x (1-p)^{40-x}=0,1613288 \sim 16,13\%\end{aligned}$$ -->
-<!-- #### Ejercicio 2.3{-} -->
-<!-- En un hospital se determinó que de 1000 pacientes, 350 eran del grupo -->
-<!-- sanguíneo A, 280 del grupo O, 180 del grupo B y 190 del grupo AB. -->
-<!-- Utilizando los estimadores que propuso @pmid6598211 estimar las -->
-<!-- frecuencias de los alelos $I^A$, $I^B$ e $i$, así como el número -->
-<!-- esperado de los distintos fenotipos si la población estuviese en -->
-<!-- equilibrio de Hardy-Weinberg. -->
-<!-- ***Solución*** -->
-<!-- \begin{equation*} -->
-<!-- \begin{split} -->
-<!-- \hat{p}=\frac{[(1/2)AB+A+O-\sqrt{O(A+O)}]}{T}=\frac{((190/2)+350+280-\sqrt{(280*(350+280))})}{1000} \sim 0,3050 \\ -->
-<!-- \hat{q}=\frac{[(1/2)AB+B+O-\sqrt{O(B+O)}]}{T}=\frac{((190/2)+180+280-\sqrt{(280*(180+280))})}{1000} \sim 0,1961 \\ -->
-<!-- \hat{r}=1-\hat{p}-\hat{q}=1-0,3050-0,2022=0,4989 -->
-<!-- \end{split} -->
-<!-- \end{equation*} -->
-<!-- De acuerdo a las frecuencias estimadas previamente, el número esperado -->
-<!-- de cada fenotipo sería -->
-<!-- \begin{equation*} -->
-<!-- \begin{split} -->
-<!-- E(A)=(p^2+2pr)T=(0,3050^2+2*0,3050*0,4989)*1000 \sim 397\\ -->
-<!-- E(B)=(q^2+2qr)T=(0,1961^2+2*0,1961*0,4989)*1000 \sim 234\\ -->
-<!-- E(AB)=2pqT=2*0,3050*0,1961*1000 \sim 120\\ -->
-<!-- E(O)=r^2T=0,4989^2*1000=483,6051 \sim 249, -->
-<!-- \end{split} -->
-<!-- \end{equation*} -->
-<!-- Claramente, hay una diferencia importante entre lo observado y lo -->
-<!-- predicho, por lo que la validez de nuestras estimaciones es nula -->
-<!-- ($\chi^2$=27,9, $gl=3$, p-value= 3,811e-06). -->
-<!-- #### Ejercicio 2.7{-} -->
-<!-- En muchos casos las ecuaciones que derivamos se simplifican enormemente debido a la restricción $p+q=1$. Demostrar que las siguientes relaciones son válidas (adaptado de @HartlClark2007) -->
-<!-- \begin{equation} -->
-<!-- p^2-q^2=p-q \\ -->
-<!-- p^2+pq=p \\ -->
-<!-- p-q=1-2q \\ -->
-<!-- p^2+q^2=1-2pq \\ -->
-<!-- (p-q)^2=1-4pq \\ -->
-<!-- \end{equation} -->
-<!-- ***Solución*** -->
-<!-- Haciendo uso de que $p+q=1$, por lo que también $(p+q)^2=p^2+2pq+q^2=1$ (ya que lo que está dentro del paréntesis vale $1$ y $1^2=1$), tenemos que  -->
-<!-- \begin{equation} -->
-<!-- p^2-q^2=(p+q)(p-q)=(1)(p-q)=p-q \\ -->
-<!-- p^2+pq=p(p+q)=p(1)=p \\ -->
-<!-- p-q=(1-q)-q=1-q-q=1-2q \\ -->
-<!-- p^2+q^2=1-2pq \Leftrightarrow p^2+q^2+2pq=1 \Leftrightarrow (p+q)^2=1 \Leftrightarrow 1^2=1\\ -->
-<!-- (p-q)^2=p^2-2pq+q^2=p^2-2pq+q^2+2pq-2pq=p^2+2pq+q^2-2pq-2pq=(p+q)^2-4pq=1-4pq -->
-<!-- \end{equation} -->
-<!-- \ -->
-<!-- ---- -->
-<!-- 1. **Familial Aggregation studies**: Is there a genetic component to the disease, and what are the relative contributions of genes and environment? -->
-<!-- 2. **Segregation studies**: What is the pattern of inheritance of the disease (recessive or dominant)? -->
-<!-- 3. **Linkage studies**: On which part of which chromosome is the disease gene located.? -->
-<!-- 4. **Association studies**: Which allele of which gene is associated with the disease? -->
-<!-- 1. **Familial Aggregation studies** -->
-<!-- **Twin Studies** -->
-<!-- The aim of this approach is to separate the environmental effects (Nurture) from genetic effects -->
-<!-- (Nature). The ideal Twin Methodology consists of identifying pairs of biological twins through -->
-<!-- affected members, and contrasting the Concordance Rates of Monozygotic and Identical (MZ) twins -->
-<!-- and Dizygotic or Fraternal (DZ) twins. If it can be assumed that MZ and DZ twins share environmental -->
-<!-- factors to a comparably similar degree (Nurture) but differ in their genetic similarity (Nature), then this -->
-<!-- comparison may allow the estimation of heritability – that is, the proportion of the variance on the -->
-<!-- liability to diseases owing to common genetic factors, and the proportion owing a shared environment. -->
-<!-- Variations of the this twin design may include comparisons of biological twins reared apart and twin -->
-<!-- family studies – to shed some light on the relative contributions of Nature vs. Nurture! Recent data -->
-<!-- seem to show that, in the general population, Nurture plays a somewhat stronger role Nature, given that -->
-<!-- all other factors being the same or comparable! -->
-<!-- **Adoption Studies** -->
-<!-- Similar to epidemiologic investigations of biological twins reared separately, Adoption Studies is -->
-<!-- another approach to contrast the effects of nurture (environmental alone) and nature (genetic alone) by -->
-<!-- comparing case subjects who have different ancestry but share the same environment. For example, a -->
-<!-- review of the literature of breast cancer cases has yielded no adoption cases. However, in a study of the -->
-<!-- relatives of some 34 adoptees with schizophrenia and 34 control adoptees, it was found that: -->
-<!-- • a 5% risk (14 cases/275 cases) appeared among their biological relatives -->
-<!-- • a 0.4% risk (1 case/253 cases) -->
-<!-- • No cases among the adoptive relatives of either group -->
-<!-- **Inbreeding Studies** -->
-<!-- Since the children of closely-related, or consanguineous, couples are likely to carry 2 copies of the -->
-<!-- same allele, and thus become at increased risk of diseases of recessive genes – those diseases for which -->
-<!-- 2 mutant alleles are necessary. Thus, inbreeding studies may be carried out as cohort studies or casecontrol -->
-<!-- studies – in either case, treating the exposure as proportional to the degree of inbreeding (such -->
-<!-- as Wright’s Coefficient of InbreedingWCI (the probability of carrying 2 copies of the same allele from -->
-<!-- a common ancestor. -->
-<!-- **Randomization Tests** -->
-<!-- ---- -->
+<hr />
 
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div class="csl-entry">
