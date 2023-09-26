@@ -22,9 +22,10 @@
 
 <meta name="author" content="Hugo Naya" />
 <meta name="author" content="Lucía Spangenberg" />
+<meta name="author" content="Camila Simoes" />
 
 
-<meta name="date" content="2023-09-23" />
+<meta name="date" content="2023-09-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -389,7 +390,7 @@ div.csl-indent {
 <h2><span class="header-section-number">1.2</span> El equilibrio de Hardy-Weinberg (breve introducción teórica)<a href="genética-de-poblaciones.html#el-equilibrio-de-hardy-weinberg-breve-introducción-teórica" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>La “ley de Hardy-Weinberg”, a veces conocida también como de
 Hardy-Weinberg-Castle por los trabajos de <span class="citation">Castle (<a href="#ref-castle1903" role="doc-biblioref">1903</a>)</span>, <span class="citation">Hardy (<a href="#ref-pmid17779291" role="doc-biblioref">1908</a>)</span>
-y <span class="citation">Weinberg (<a href="#ref-weinberg1908" role="doc-biblioref">1908</a>)</span>,<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> es posiblemente uno de los resultados mejor
+y <span class="citation">Weinberg (<a href="#ref-weinberg1908" role="doc-biblioref">1908</a>)</span>,<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a> es posiblemente uno de los resultados mejor
 conocidos de la genética de poblaciones. La misma permite predecir la
 composición de genotipos en un locus determinado, una vez alcanzado el
 equilibrio, a partir de la frecuencia de los alelos, cuando se cumplen
@@ -473,7 +474,7 @@ Figura 1.1: Cuadrado de Punnett con frecuencias <span class="math inline">\(p=0,
 <p><br />
 </p>
 <p>Una forma gráfica de ver estos resultados son los llamados “cuadrados de
-Punnett”<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>, como el que se aprecia en la figura <a href="genética-de-poblaciones.html#fig:HWpunnett">1.1</a>.
+Punnett”<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a>, como el que se aprecia en la figura <a href="genética-de-poblaciones.html#fig:HWpunnett">1.1</a>.
 En la misma, en el eje horizontal tenemos la frecuencia con la que
 aparecen los gametos masculinos, mientras que en el vertical aparecen
 las frecuencias de los gametos femeninos; por lo tanto, el producto de
@@ -876,7 +877,7 @@ claramente el origen del factor 2 en los heterocigotos (la suma de las 2
 <span id="cb103-2"><a href="genética-de-poblaciones.html#cb103-2" aria-hidden="true" tabindex="-1"></a>freqSNPSpopmas20<span class="ot">&lt;-</span><span class="fu">apply</span>(ngenot.estan[,tb[tb<span class="sc">$</span>Population.name<span class="sc">%in%</span>popmas20,<span class="st">&quot;Sample.name&quot;</span>]],<span class="dv">1</span>,<span class="cf">function</span>(x)<span class="fu">sum</span>(x,<span class="at">na.rm=</span><span class="cn">TRUE</span>)<span class="sc">/</span>(<span class="dv">2</span><span class="sc">*</span><span class="fu">sum</span>(<span class="sc">!</span><span class="fu">is.na</span>(x))))</span>
 <span id="cb103-3"><a href="genética-de-poblaciones.html#cb103-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(freqSNPSpopmas20,ffp,<span class="at">cex=</span><span class="fl">0.2</span>,<span class="at">xlab=</span><span class="st">&quot;media para todas las muestras consideradas&quot;</span>,<span class="at">ylab=</span><span class="st">&quot;promedio ponderado&quot;</span>)</span></code></pre></div>
 <p><img src="HWEA2022_files/figure-html/chunk131-2.png" width="672" style="display: block; margin: auto;" /></p>
-<p>Notar que para evitar usar un bucle “for” que lleva muchísimo tiempo, para la verificación usamos el producto matricial, mediante el operador “%*%“, lo que acelera muchísimo los resultados. Verificado esto (ver la línea de regresión perfecta sobre la diagonal), podemos estudiar un poco la variabilidad de las frecuencias en las distinats poblaciones respecto a la frecuencia media en los datos.</p>
+<p>Notar que para evitar usar un bucle “for” que lleva muchísimo tiempo, para la verificación usamos el producto matricial, mediante el operador “%*%“, lo que acelera muchísimo los resultados. Verificado esto (ver la línea de regresión perfecta sobre la diagonal), podemos estudiar un poco la variabilidad de las frecuencias en las distintas poblaciones respecto a la frecuencia media en los datos.</p>
 <p>Por ejemplo, la población con más individuos en nuestra muestra es la Yoruba con 125 individuos. Veamos la variación de la frecuencia del alternativo en esta población respecto a dicha frecuencia en el promedio.</p>
 <div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="genética-de-poblaciones.html#cb104-1" aria-hidden="true" tabindex="-1"></a>popNmax<span class="ot">&lt;-</span><span class="fu">names</span>(<span class="fu">sort</span>(<span class="fu">table</span>(tb<span class="sc">$</span>Population.name)[<span class="fu">table</span>(tb<span class="sc">$</span>Population.name)<span class="sc">&gt;</span><span class="dv">20</span>],<span class="cn">TRUE</span>)[<span class="dv">1</span>])</span>
 <span id="cb104-2"><a href="genética-de-poblaciones.html#cb104-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(freqSNPSpopmas20,fFreq[,popNmax],<span class="at">cex=</span><span class="fl">0.2</span>,<span class="at">col=</span><span class="st">&quot;darkblue&quot;</span>)</span></code></pre></div>
@@ -1750,16 +1751,16 @@ Wright, Sewall. 1978. <em>Evolution and the Genetics of Populations</em>. Chicag
 </div>
 <div class="footnotes">
 <hr />
-<ol start="3">
-<li id="fn3"><p>Aunque la misma ya había sido claramente establecida por
-<span class="citation">Vries (<a href="#ref-deVries1900" role="doc-biblioref">1900</a>)</span> durante el re-descubrimiento de las leyes de Mendel<a href="genética-de-poblaciones.html#fnref3" class="footnote-back">↩︎</a></p></li>
-<li id="fn4"><p>Reginald Crundall Punnett, genetista británico que fue quien los
+<ol start="4">
+<li id="fn4"><p>Aunque la misma ya había sido claramente establecida por
+<span class="citation">Vries (<a href="#ref-deVries1900" role="doc-biblioref">1900</a>)</span> durante el re-descubrimiento de las leyes de Mendel<a href="genética-de-poblaciones.html#fnref4" class="footnote-back">↩︎</a></p></li>
+<li id="fn5"><p>Reginald Crundall Punnett, genetista británico que fue quien los
 desarrolló. Además, Punnett se relaciona directamente con el
 equilibrio de Hardy-Weinberg, ya que al no poder contrarrestar los
 argumentos de George Udny Yule acerca del crecimiento sostenido de
 los alelos dominantes, llevó el problema al matemático Godfrey
 Harold Hardy, con quien jugaba al cricket; el resto es historia
-conocida.<a href="genética-de-poblaciones.html#fnref4" class="footnote-back">↩︎</a></p></li>
+conocida.<a href="genética-de-poblaciones.html#fnref5" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
