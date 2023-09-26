@@ -25,7 +25,7 @@
 <meta name="author" content="Camila Simoes" />
 
 
-<meta name="date" content="2023-09-25" />
+<meta name="date" content="2023-09-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -293,7 +293,12 @@ div.csl-indent {
 <span id="cb23-7"><a href="genética-de-poblaciones.html#cb23-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-8"><a href="genética-de-poblaciones.html#cb23-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-9"><a href="genética-de-poblaciones.html#cb23-9" aria-hidden="true" tabindex="-1"></a>lichr<span class="ot">&lt;-</span><span class="fu">lapply</span>(liChrVCF,create.chromR,<span class="at">name=</span><span class="st">&quot;CHROM&quot;</span>)</span>
-<span id="cb23-10"><a href="genética-de-poblaciones.html#cb23-10" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<span id="cb23-10"><a href="genética-de-poblaciones.html#cb23-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-11"><a href="genética-de-poblaciones.html#cb23-11" aria-hidden="true" tabindex="-1"></a><span class="co"># MÁQUINAS CON PROBLEMA DE MEMORIA</span></span>
+<span id="cb23-12"><a href="genética-de-poblaciones.html#cb23-12" aria-hidden="true" tabindex="-1"></a><span class="co"># ATENCIÓN: PARA QUEDARSE SOLO CON LOS CROMOSOMAS 1 y 2 HACER LO SIGUIENTE</span></span>
+<span id="cb23-13"><a href="genética-de-poblaciones.html#cb23-13" aria-hidden="true" tabindex="-1"></a>vcf<span class="ot">&lt;-</span>vcf[<span class="fu">getCHROM</span>(vcf)<span class="sc">%in%</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), ]</span>
+<span id="cb23-14"><a href="genética-de-poblaciones.html#cb23-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-15"><a href="genética-de-poblaciones.html#cb23-15" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p>Volvamos al conjunto de todos nuestros datos, que teníamos almacenados en un objeto de clase “vcfR”. Solamente por comodidad futura, vamos a cargar el contenido de los distintos “slots” en diferentes objetos de tipo básico (<em>data.frame</em>, por ejemplo).</p>
 <div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="genética-de-poblaciones.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tabla de los SNPS: verificamos que no hay cromosomas sexuales ni MT</span></span>
 <span id="cb24-2"><a href="genética-de-poblaciones.html#cb24-2" aria-hidden="true" tabindex="-1"></a>snps<span class="ot">&lt;-</span><span class="fu">as.data.frame</span>(vcf<span class="sc">@</span>fix)</span></code></pre></div>
